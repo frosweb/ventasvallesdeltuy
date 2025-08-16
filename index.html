@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmobiliaria de Lujo - Encuentra tu Hogar Ideal</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Estilos del encabezado (Header) */
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1600596542813-f930e137f692'); /* Cambia esta URL por la imagen que desees */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Contenedor principal para el contenido */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Estilos de las tarjetas de inmuebles */
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .property-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .property-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .property-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .property-info {
+            padding: 20px;
+        }
+
+        .property-info h3 {
+            margin: 0 0 10px;
+            color: #007bff;
+        }
+
+        .property-info p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .property-price {
+            font-size: 1.5em;
+            color: #28a745;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Estilos del formulario de contacto */
+        .contact-form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Para que el padding no afecte el ancho */
+        }
+
+        .contact-form button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Pie de página (Footer) */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <h1>Tu Nuevo Hogar Te Espera</h1>
+        <p>Expertos en venta de inmuebles de lujo y propiedades únicas.</p>
+    </header>
+
+    <section class="container">
+        <h2>Inmuebles Destacados</h2>
+        <div class="property-grid">
+
+            <div class="property-card">
+                <img src="https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/510255704_2271162849965183_5772254210414505123_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=f727a1&_nc_ohc=XaknGZfpl4sQ7kNvwFv1W2a&_nc_oc=AdlLYqMcpDXXAQAH8tSyGEjbp5IVoybV0kdVsUhWP9KFQLJt4JO8bdxdQ4eSfnAWmp4&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=Nu-bjkOcmSZPQGluBIj_Hw&oh=00_AfXe-NN13FtLcmRmXbd9o9SeLYJnjTqzZPoUHGJdKTCV0w&oe=68A687BC" alt="Urbanización Las Cayena, Charallave">
+                <div class="property-info">
+                    <h3>Urbanizacion Las Cayenas, Charallave</h3>
+                    <p>Ubicada en una zona exclusiva con vistas panorámicas.  3 habitaciones, 2 baños.</p>
+                    <p class="property-price">$16.000</p>
+                </div>
+            </div>
+
+            <div class="property-card">
+                <img src="https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/531981353_2317490555332412_4092195996410077246_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=946e27&_nc_ohc=nLqPgzEYm8UQ7kNvwFYPU7q&_nc_oc=AdnekEF_2ewubB_aXYl0nIK4tSVXCjYIGjSFbajBu9sJJ3iyHukknJQSmO9J068UI0o&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=TEtgtu4P4hKeCmwVcMfrhw&oh=00_AfXSoclzLLNpdC1qvVrBgWwpnWuj5taEDl9ATONKobHM4g&oe=68A669FC" alt="Apartamento Duplex, Urbanización Charallave">
+                <div class="property-info">
+                    <h3>Apartamento Duplex, en la Urbanización Betania de Charallave</h3>
+                    <p>Ideal para jóvenes profesionales. 3 habitaciones, 2 baños. Cerca de todos los servicios.</p>
+                    <p class="property-price">$19.000</p>
+                </div>
+            </div>
+
+            <div class="property-card">
+                <img src="https://images.unsplash.com/photo-1560185854-3e96f1301823" alt="Casa de Campo con Gran Jardín">
+                <div class="property-info">
+                    <h3>Casa de Campo con Gran Jardín</h3>
+                    <p>Un escape de la ciudad. Tranquilidad y naturaleza. 3 habitaciones, 2 baños y un gran terreno.</p>
+                    <p class="property-price">$800,000</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contact-form">
+            <h2>¿Interesado en una propiedad? Contáctanos</h2>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Tu Nombre Completo" required>
+                <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
+                <textarea name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Inmobiliaria de Lujo. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -3,185 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Agente de Bienes Raices de los Valles del Tuy- Encuentra tu Hogar Ideal</title>
-    <style>
-        /* Estilos generales */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        /* Estilos del encabezado (Header) */
-        .hero-section {
-            background-image: url('https://png.pngtree.com/background/20230616/original/pngtree-real-estate-sales-taking-a-dip-in-stunning-3d-visualization-picture-image_3664157.jpg'); /* Cambia esta URL por la imagen que desees */
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .hero-section h1 {
-            font-size: 3em;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero-section p {
-            font-size: 1.2em;
-            margin-top: 10px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        /* Contenedor principal para el contenido */
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-
-        /* Estilos de las tarjetas de inmuebles */
-        .property-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .property-card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .property-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .property-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .property-info {
-            padding: 20px;
-        }
-
-        .property-info h3 {
-            margin: 0 0 10px;
-            color: #007bff;
-        }
-
-        .property-info p {
-            margin: 0;
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        .property-price {
-            font-size: 1.5em;
-            color: #28a745;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        /* Estilos del formulario de contacto */
-        .contact-form {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin-top: 40px;
-        }
-
-        .contact-form h2 {
-            text-align: center;
-            color: #007bff;
-            margin-bottom: 20px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box; /* Para que el padding no afecte el ancho */
-        }
-
-        .contact-form button {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Pie de página (Footer) */
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
-            margin-top: 40px;
-        }
-    </style>
+    <title>Buscador de casa para compra vender o alqular</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="hero-section">
         <h1>Tu Nuevo Hogar Te Espera</h1>
-        <p>Agentes de bienes raices experto en los Valles del Tuy.</p>
+        <p>Expertos en venta de inmuebles de lujo y propiedades únicas.</p>
+        <h4> Buscar 🗺️</h4>
+        <input type="text" id="searchInput" placeholder="Buscar publicaciones...">
     </header>
 
-    <section class="container">
-        <h2>Inmuebles Destacados</h2>
-        <div class="property-grid">
-
-            <div class="property-card">
-                <img src="https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/529228096_2310089122739222_7469164428099390666_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=946e27&_nc_ohc=8i7e9SQlft4Q7kNvwGlRi4I&_nc_oc=AdnIfJCkHUqMFhC2PWBV7nzFGALRwQBX7GYAxNKzozD1eIuCIq_3oT-Usg7TVxZouXI&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=X17t8BVk8x3UAPGhkIRLOA&oh=00_AfVUnlBqBpEZEPy_7cuH4f-oGhwlg0-LGM0KAtw2gFqNTw&oe=68A6C731" alt="Parque Residencias Matalinda, Charallave">
-                <div class="property-info">
-                   <a href="https://www.facebook.com/share/16sat6ZtgM/" target="_blank"><h3>Parque Residencial Matalinda, Charallave</h3></a>
-                    <p>Ubicada en una zona exclusiva,  2 habitaciones, Baño y medio.</p>
-                    <p class="property-price">$14.000</p>
-                </div>
+    <div class="property-grid">
+        <div class="property-card post">
+            <img src="https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/529228096_2310089122739222_7469164428099390666_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=946e27&_nc_ohc=8i7e9SQlft4Q7kNvwGlRi4I&_nc_oc=AdnIfJCkHUqMFhC2PWBV7nzFGALRwQBX7GYAxNKzozD1eIuCIq_3oT-Usg7TVxZouXI&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=X17t8BVk8x3UAPGhkIRLOA&oh=00_AfVUnlBqBpEZEPy_7cuH4f-oGhwlg0-LGM0KAtw2gFqNTw&oe=68A6C731" alt="Parque Residencias Matalinda, Charallave, venta, apartamentos, 2 habitaciones">
+            <div class="property-info">
+                <a href="https://www.facebook.com/share/16sat6ZtgM/" target="_blank"><h3>Parque Residencial Matalinda, Charallave</h3></a>
+                <p>Ubicada en una zona exclusiva, 2 habitaciones, Baño y medio. Ideal para venta.</p>
+                <p class="property-price">$14.000</p>
             </div>
-
-            <div class="property-card">
-                <img src="https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/531981353_2317490555332412_4092195996410077246_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=946e27&_nc_ohc=nLqPgzEYm8UQ7kNvwFYPU7q&_nc_oc=AdnekEF_2ewubB_aXYl0nIK4tSVXCjYIGjSFbajBu9sJJ3iyHukknJQSmO9J068UI0o&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=TEtgtu4P4hKeCmwVcMfrhw&oh=00_AfXSoclzLLNpdC1qvVrBgWwpnWuj5taEDl9ATONKobHM4g&oe=68A669FC" alt="Apartamento Duplex, Urbanización Charallave"> 
-                <div class="property-info">
-                    <a href="https://www.facebook.com/share/19YB3a2393/" target="_blank"><h3>Apartamento Duplex, en la Urbanización Betania de Charallave</h3> </a>
-                    <p>Ideal para jóvenes profesionales. 3 habitaciones, 2 baños. Cerca de todos los servicios.</p>
-                    <p class="property-price">$19.000</p>
-                </div>
-            </div>
-
-            <div class="property-card">
-                <img src="https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/530636990_2312727495808718_7301613158332671389_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=946e27&_nc_ohc=mb33PDBGqtwQ7kNvwFInWNf&_nc_oc=AdlzukZn16UjZP6fEHpFlJKJEIi3sNSUPGKxHHHUv_lZ5uDABoHfSvxdjOLNcZQmgMk&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=155QWiLa02aadIk27VZQyw&oh=00_AfURgU6LA3IzPPLmnZjc8w9B_wGh_NWkqFyHEk1HbJptqQ&oe=68A6C237" alt="Urbanización Casa de Tejas, Ocumare del tuy">
-                <div class="property-info">
-                     <a href="https://www.facebook.com/share/1CBKsarxnQ/" target="_blank"><h3>Casa  en venta en la Urbanización Casa de Tejas, Ocumare del Tuy</h3></a> 
-                    <p>Hermosa casa de 127,50 m2, 3 Habitaciones con clóset, 1 baño con cerámica, Sala-Comedor, Área de Lavadero.</p>
-                    <p class="property-price">$19.500</p>
-                </div>
-            </div>
-
         </div>
-    </section>
+
+        <div class="property-card post">
+            <img src="https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/531981353_2317490555332412_4092195996410077246_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=946e27&_nc_ohc=nLqPgzEYm8UQ7kNvwFYPU7q&_nc_oc=AdnekEF_2ewubB_aXYl0nIK4tSVXCjYIGjSFbajBu9sJJ3iyHukknJQSmO9J068UI0o&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=TEtgtu4P4hKeCmwVcMfrhw&oh=00_AfXSoclzLLNpdC1qvVrBgWwpnWuj5taEDl9ATONKobHM4g&oe=68A669FC" alt="Apartamento Duplex, Urbanización Charallave, alquiler, 3 habitaciones"> 
+            <div class="property-info">
+                <a href="https://www.facebook.com/share/19YB3a2393/" target="_blank"><h3>Apartamento Duplex, en la Urbanización Betania de Charallave</h3> </a>
+                <p>Ideal para jóvenes profesionales. 3 habitaciones, 2 baños. Cerca de todos los servicios. Se alquila.</p>
+                <p class="property-price">$19.000</p>
+            </div>
+        </div>
+
+        <div class="property-card post">
+            <img src="https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/530636990_2312727495808718_7301613158332671389_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=946e27&_nc_ohc=mb33PDBGqtwQ7kNvwFInWNf&_nc_oc=AdlzukZn16UjZP6fEHpFlJKJEIi3sNSUPGKxHHHUv_lZ5uDABoHfSvxdjOLNcZQmgMk&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=155QWiLa02aadIk27VZQyw&oh=00_AfURgU6LA3IzPPLmnZjc8w9B_wGh_NWkqFyHEk1HbJptqQ&oe=68A6C237" alt="Urbanización Casa de Tejas, Ocumare del tuy, casa, venta, 3 habitaciones">
+            <div class="property-info">
+                <a href="https://www.facebook.com/share/1CBKsarxnQ/" target="_blank"><h3>Casa en venta en la Urbanización Casa de Tejas, Ocumare del Tuy</h3></a>
+                <p>Hermosa casa de 127,50 m2, 3 Habitaciones con clóset, 1 baño con cerámica, Sala-Comedor, Área de Lavadero. Disponible para la venta.</p>
+                <p class="property-price">$19.500</p>
+            </div>
+        </div>
+    </div>
 
     <section class="container">
         <div class="contact-form">
@@ -196,10 +57,9 @@
     </section>
 
     <footer class="footer">
-        <p>&copy; 2025  Inmuebles de Lujos en los Valles del Tuy. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Inmuebles de Lujos. Todos los derechos reservados.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
-
-

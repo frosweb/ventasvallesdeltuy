@@ -178,17 +178,16 @@ body {
 }
 
 
-/* Encabezado */
 .hero-section {
     background-image: url('img/img.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; /* Agregado para evitar que la imagen se repita */
+    background-repeat: no-repeat;
     color: white;
     text-align: center;
     padding: 100px 20px;
     width: 100%;
-    min-height: 50vh; /* Usa vh (viewport height) para una altura mínima adaptable */
+    min-height: 50%;
 }
 
 .hero-section h1 {
@@ -322,6 +321,7 @@ body {
     color: #fff;
     margin-top: 40px;
 }
+
 
 
 

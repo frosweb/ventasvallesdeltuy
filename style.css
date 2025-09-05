@@ -184,7 +184,7 @@ body {
     background-position: center;
     color: white;
     text-align: center;
-    padding: 100px 20px;
+    padding: 100px 20%;
 }
 
 .hero-section h1 {
@@ -318,4 +318,5 @@ body {
     color: #fff;
     margin-top: 40px;
 }
+
 

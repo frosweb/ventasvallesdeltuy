@@ -1,49 +1,129 @@
-/* Estilos generales y tipografía */
+/*==========================================================
+  ESTILOS GLOBALES Y VARIABLES
+==========================================================*/
+:root {
+    /* Paleta de colores */
+    --color-primary: #007bff;
+    --color-secondary: #28a745;
+    --color-background-light: #f0f2f5;
+    --color-text-dark: #333;
+    --color-text-light: #fff;
+    --color-facebook-blue: #1877f2;
+    --color-facebook-blue-hover: #166fe5;
+    
+    /* Tipografía */
+    --font-family-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Sombras y transiciones */
+    --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --box-shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.15);
+    --transition-fast: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/*==========================================================
+  AJUSTES GENERALES
+==========================================================*/
+*, *::before, *::after {
+    box-sizing: border-box; /* Unifica el modelo de caja para todos los elementos */
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-family-sans);
     line-height: 1.6;
-    background-color: #f0f2f5;
-    color: #333;
+    background-color: var(--color-background-light);
+    color: var(--color-text-dark);
     margin: 0;
     padding: 0;
 }
 
-/* Contenedor principal para centrar el contenido */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Sección de encabezado (Hero Section) */
+/*==========================================================
+  ENCABEZADO (HERO SECTION)
+==========================================================*/
 .hero-section {
     background-image: url('img/img.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: white;
+    color: var(--color-text-light);
     text-align: center;
     padding: 80px 20px;
-    min-height: 50vh; /* Altura mínima para asegurar visibilidad */
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.hero-section h1 {
-    font-size: clamp(2em, 5vw, 3.5em); /* Fuente adaptable con clamp() */
+.header-content h1 {
+    font-size: clamp(2em, 5vw, 3.5em);
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+   
 }
 
-.hero-section p {
+.header-content p {
     font-size: clamp(1em, 2vw, 1.2em);
     margin-top: 10px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Buscador */
+/*==========================================================
+  NAVEGACIÓN
+==========================================================*/
+.main-nav {
+    margin-top: 20px; /* Separación del título */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color var(--transition-slow);
+    display: block;
+}
+
+.nav-menu a:hover {
+    background-color: rgba(8, 85, 250, 0.2);
+}
+
+.facebook-button {
+    display: inline-block;
+    background-color: var(--color-facebook-blue);
+    color: var(--color-text-light);
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color var(--transition-fast);
+}
+
+.facebook-button:hover {
+    background-color: var(--color-facebook-blue-hover);
+}
+
+/*==========================================================
+  BUSCADOR
+==========================================================*/
 .search-container {
     width: 100%;
     max-width: 600px;
@@ -57,46 +137,18 @@ body {
     border-radius: 25px;
     font-size: 16px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: all var(--transition-fast);
 }
 
 #searchInput:focus {
-    border-color: #007BFF;
+    border-color: var(--color-primary);
     outline: none;
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
 }
 
-/* Menú de navegación */
-.main-nav {
-    padding: 10px 0;
-}
-
-.nav-menu {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-    justify-content: center;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-menu li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1em;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    display: block;
-}
-
-.nav-menu li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Grid de propiedades */
+/*==========================================================
+  GRID DE PROPIEDADES
+==========================================================*/
 .property-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -104,18 +156,17 @@ body {
     padding: 20px 0;
 }
 
-/* Tarjetas de propiedades */
 .property-card {
-    background-color: #fff;
+    background-color: var(--color-text-light);
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow-light);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .property-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--box-shadow-hover);
 }
 
 .property-card img {
@@ -128,9 +179,9 @@ body {
     padding: 15px;
 }
 
-.property-info h3 {
+.property-info h4 { /* Cambiado a h4, como en el HTML */
     margin: 0 0 10px;
-    color: #007bff;
+    color: var(--color-primary);
 }
 
 .property-info p {
@@ -141,26 +192,26 @@ body {
 
 .property-price {
     font-size: 1.5em;
-    color: #28a745;
+    color: var(--color-secondary);
     font-weight: bold;
     margin-top: 10px;
 }
 
-/* Estilos del formulario de contacto */
+/*==========================================================
+  FORMULARIO DE CONTACTO
+==========================================================*/
 .contact-form {
-    background-color: #fff;
+    background-color: var(--color-text-light);
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 40px;
+    box-shadow: var(--box-shadow-light);
+    margin: 40px auto;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .contact-form h2 {
     text-align: center;
-    color: #007bff;
+    color: var(--color-primary);
     margin-bottom: 20px;
 }
 
@@ -176,29 +227,43 @@ body {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Asegura que el padding no cambie el ancho */
+    box-sizing: border-box;
 }
 
 .contact-form button {
-    background-color: #007bff;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
     border: none;
     padding: 15px;
     cursor: pointer;
     border-radius: 5px;
     font-size: 1.1em;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-fast);
 }
 
 .contact-form button:hover {
     background-color: #0056b3;
 }
 
-/* Pie de página */
+/*==========================================================
+  PIE DE PÁGINA
+==========================================================*/
 .footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--color-text-dark);
+    color: var(--color-text-light);
     margin-top: 40px;
+}
+
+/*==========================================================
+  ENLACES (CORRECCIÓN)
+==========================================================*/
+a {
+    text-decoration: none;
+}
+
+a:link,
+a:visited {
+    color: inherit;
 }

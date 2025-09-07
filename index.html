@@ -1,88 +1,3 @@
-<?php
-// This is your data source. In a real application, this would come from a database.
-$properties = [
-    [
-        'category' => 'venta',
-        'image' => 'https://scontent-mia5-1.xx.fbcdn.net/v/t39.30808-6/542632649_24371434979146036_2227896248986813374_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=102&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=dcUXSRR1NH0Q7kNvwE8CXl_&_nc_oc=Adl2iE5TP7ov4nSdfhVQtXa9tFIvA7DROsrlx-6mk4AXoABXeJ2Ol32KFBeyAokiwSs&_nc_zt=23&_nc_ht=scontent-mia5-1.xx&_nc_gid=0fEBdlb8u4FY1VqesKIdhg&oh=00_AfaYhColLNUX4ebNfjdW4HPnf9EYY0-KzuUrxOnrUbiDyQ&oe=68BE8629',
-        'alt' => 'Urbanización Matalinda Charallave',
-        'link' => 'https://www.facebook.com/share/p/176ySRpuhV/',
-        'title' => 'Urbanización Matalinda, Charallave',
-        'price' => '$35.000'
-    ],
-    [
-        'category' => 'venta',
-        'image' => 'https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/530236499_10236947319730001_8630639392519717851_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=946e27&_nc_ohc=ZT2Hd5BCo98Q7kNvwG1928O&_nc_oc=Adn-cnUK1l_cgl2NuC7KFEPP96ZREd4PGealGuzIMnayTFCRZT7ACmOiKK2BWvAZTbo&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=WdMSImp07VlEc-fJLaLkbg&oh=00_AfUz0FmjqaZUIzENFiWYiElkiIeE-4rVRGVHbP-1bO1smg&oe=68B82E87',
-        'alt' => 'Sector La Calceta, Santa Teresa',
-        'link' => 'https://www.facebook.com/commerce/listing/2281628242235310?ref=share_attachment&locale=es_LA',
-        'title' => 'Sector La Calceta, Santa Teresa',
-        'price' => '$13.500'
-    ],
-    [
-        'category' => 'venta',
-        'image' => 'https://scontent.fmrd1-2.fna.fbcdn.net/v/t45.5328-4/540345303_4050064418566736_4530062322498297564_n.jpg?stp=dst-jpg_p960x960_tt6&_nc_cat=102&ccb=1-7&_nc_sid=247b10&_nc_ohc=LkC85lzm60kQ7kNvwEEMKV1&_nc_oc=AdkIG-hZ9CTvU0VhZYZVgN8DSG9wQ5ShjcYVZkcEsMbbdr0eT81EmlizuTVMMudRjHI&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=TCYE39NQXTdj3M8Knr5xyg&oh=00_AfXkdtXjsGwfSTMPj5ckYhCwQxFJ69nKbXogOQiKBOh0Vw&oe=68B82738',
-        'alt' => 'Centro Comercial Betania, Cua',
-        'link' => 'https://www.facebook.com/share/p/176pG7iDQs/',
-        'title' => 'Centro Comercial Betania, Cua',
-        'price' => '$27.000'
-    ],
-    [
-        'category' => 'alquiler',
-        'image' => 'https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/539484959_3307166206126604_7903385407956330111_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=100&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=eMUCOHLGXb0Q7kNvwF4k5OT&_nc_oc=Adl6lXSGEnFlPKEdFtT4rPDAv27Yzk5TFAyYJnMVn18q4NhcJ5ejFR7fe4tgh9j0ZgQ&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=AvKPdaxudLi-RSu-TZdm_g&oh=00_AfUqIkHVqHRqQ1azu1KIcOZ8q7JP85R6kH3qaxlY2LjpNA&oe=68B81E10',
-        'alt' => 'Residencia Charleville, Cua',
-        'link' => 'https://www.facebook.com/commerce/listing/24320502317604601/?ref=share_attachment&locale=es_LA',
-        'title' => 'Residencia Charleville, Cua',
-        'price' => 'Alquiler'
-    ],
-    [
-        'category' => 'alquiler',
-        'image' => 'https://scontent-mia3-3.xx.fbcdn.net/v/t39.30808-6/540592951_4048620278785990_3515025977535038336_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=SLfIYBbMCVIQ7kNvwHSOp5I&_nc_oc=Adkt-gEpm54zdqN3YhsmIxdJ_vmpKJZDEGZMclZSoJ6qQdj5V9M7o_rJmhmECL_5_uM&_nc_zt=23&_nc_ht=scontent-mia3-3.xx&_nc_gid=-6vBXwkGkhHMC__HnBEhqw&oh=00_AfY1Csrx4ieUxlH9WI7-DDYMSIzPuMoV_whI6bppfeI9BA&oe=68BEBF0A',
-        'alt' => 'Casco Central, Charallave',
-        'link' => 'https://www.facebook.com/share/p/1A2DzMMLuB/',
-        'title' => 'Casco Central, Charallave',
-        'price' => 'Alquiler'
-    ],
-    [
-        'category' => 'venta',
-        'image' => 'https://scontent-mia5-1.xx.fbcdn.net/v/t39.30808-6/539600456_4207360692829630_3516161984707411747_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=104&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=oYzMT3Zz65UQ7kNvwHHnZeN&_nc_oc=AdmtUwTpetvEBqWPwUoJOGCyqiwlzT0bXL8TxyyzCMm7tQPTI-PxfeUHVJpYbD_7sGk&_nc_zt=23&_nc_ht=scontent-mia5-1.xx&_nc_gid=Kce4UgJqA2hZMXiYHNm-yQ&oh=00_AfYTbTKseYIqrIsA8ur9sr_7n-BUSyNI2ypeG5JCzXVlJA&oe=68BEAAF4',
-        'alt' => 'Residencias Las Violetas, Cua',
-        'link' => 'https://www.facebook.com/share/p/17Cb2r7Lr8/',
-        'title' => 'Residencias Las Violetas, Cua',
-        'price' => '$16.000'
-    ],
-    [
-        'category' => 'venta',
-        'image' => 'https://scontent.fmrd1-2.fna.fbcdn.net/v/t45.5328-4/534501103_1709648149838074_6115432414385923227_n.jpg?stp=dst-jpg_p960x960_tt6&_nc_cat=109&ccb=1-7&_nc_sid=247b10&_nc_ohc=NhccN10BrRYQ7kNvwGI86Q_&_nc_oc=Adme2EBqBLWavVFwmLzaeIsIFlWtPn-ZAmApDxoIjwptvu67hgGkVd9KfYmRdAj5gL4&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=f8Vzyz-SyxFq0tDNv4hLJw&oh=00_AfWc_30ndAc08Wv1Ony_C-RLD-CIyj70gZ9tQgQwXf4EZA&oe=68B5676A',
-        'alt' => 'Urbanización Valle Alto, Ocumare del Tuy',
-        'link' => 'https://www.facebook.com/marketplace/item/1413221016426898?rid=25271403902447298&ad_id&rt=1&refID=0&refType=0&referral_code=commerce_attachment',
-        'title' => 'Urbanización Valle Alto, Ocumare del Tuy',
-        'price' => '$10.000'
-    ],
-    [
-        'category' => 'venta',
-        'image' => 'https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/536268334_4223651534544424_202572438350009121_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=103&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=KxVfQjwhZdgQ7kNvwHPDiLw&_nc_oc=AdmtKxVMIkXjOB1PWStIZkDefQTR4cIauQcn09UCs25UHpVBNv481UPNYCSQ1KBslM0&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=sYAv6cjw_D5-xqojTr7JVg&oh=00_AfWQv8EpD9SrevkUB9c5AVAiBRCQz6rbJJeoWsDgFeBuUw&oe=68B59345',
-        'alt' => 'Residencia Mibeli, Santa Teresa del Tuy',
-        'link' => 'https://www.facebook.com/commerce/listing/610113392173208/?ref=share_attachment',
-        'title' => 'Residencia Mibeli, Santa Teresa del Tuy',
-        'price' => '$10.000'
-    ],
-    [
-        'category' => 'venta',
-        'image' => 'https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/536282877_2327226941025440_6249698684398211864_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=111&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=NXEy_oVS9rEQ7kNvwHFYX1j&_nc_oc=AdlWr1sB9CnArqPOwnPnWhyw7iEJbgfTzIwBZxIj9-4RKDzjFL_czWVkEN2Wqz27nak&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=zmKgbAh_pj4ar08CdqUGUQ&oh=00_AfURwCZQ_ybExBZQRYA0CfpykKztaXuQp7gtxTIfIBANHQ&oe=68B5631E',
-        'alt' => 'Urbanizacion Mata Linda, Charallave',
-        'link' => 'https://www.facebook.com/commerce/listing/1080185164311985/?ref=share_attachment',
-        'title' => 'Urbanización Mata Linda, Charallave',
-        'price' => '$18.000'
-    ],
-    [
-        'category' => 'venta',
-        'image' => 'https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/538108593_24616055271346987_1762748752322163775_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=108&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=TOxlFEuTniYQ7kNvwEjcGur&_nc_oc=AdmW5qM00icLgfbIaZca7OxFvOxZcoCkW3G6wHJe4bmfauRT4XzMDBCRgn-nd5MWyiA&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=Ns_CHlFIE6Y6HWQmjgG9Qw&oh=00_AfVgiJubSI5LHqC2i4U0V2-gvuT8GwgABWxC5CGpB90GvQ&oe=68B57A67',
-        'alt' => 'Urbanización Las Brisas, Cua',
-        'link' => 'https://www.facebook.com/commerce/listing/1334728568176904/?ref=share_attachment',
-        'title' => 'Urbanización Las Brisas, Cua',
-        'price' => '$35.000'
-    ]
-];
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -97,8 +12,9 @@ $properties = [
     <header class="hero-section">
         <div class="header-content">
             <h1>Tu Nuevo Hogar Te Espera</h1>
-            <p>Marketplace Ocumare del Tuy y Valles Del Tuy 💸</p>
+            <a href="https://www.facebook.com/groups/1159228138826054" target="_blank"><h2>Marketplace Ocumare del Tuy y Valles Del Tuy 💸</h2></a>
             <nav class="main-nav">
+                
                 <ul class="nav-menu">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#venta">Venta</a></li>
@@ -107,22 +23,91 @@ $properties = [
             </nav>
             <h5> </h5>
             <input type="text" id="searchInput" placeholder="Buscar publicaciones...">
-            <a href="https://www.facebook.com/groups/712349077180479" target="_blank" class="facebook-button">
+            <a href="https://www.facebook.com/groups/1159228138826054" target="_blank" class="facebook-button">
                 Sígueme en Facebook
             </a>
         </div>
     </header>
-
     <div class="property-grid" id="inicio">
-        <?php foreach ($properties as $property): ?>
-            <div class="property-card post" data-category="<?php echo $property['category']; ?>">
-                <img src="<?php echo $property['image']; ?>" alt="<?php echo $property['alt']; ?>" loading="lazy">
-                <div class="property-info">
-                    <a href="<?php echo $property['link']; ?>" target="_blank"><h4><?php echo $property['title']; ?></h4></a>
-                    <p class="property-price"><?php echo $property['price']; ?></p>
-                </div>
+        <div class="property-card post" data-category="venta">
+            <img src="https://scontent-mia5-1.xx.fbcdn.net/v/t39.30808-6/542632649_24371434979146036_2227896248986813374_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=102&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=dcUXSRR1NH0Q7kNvwE8CXl_&_nc_oc=Adl2iE5TP7ov4nSdfhVQtXa9tFIvA7DROsrlx-6mk4AXoABXeJ2Ol32KFBeyAokiwSs&_nc_zt=23&_nc_ht=scontent-mia5-1.xx&_nc_gid=0fEBdlb8u4FY1VqesKIdhg&oh=00_AfaYhColLNUX4ebNfjdW4HPnf9EYY0-KzuUrxOnrUbiDyQ&oe=68BE8629" alt="Urbanización Matalinda Charallave " loading="lazy">
+            <div class="property-info">
+                <a href="https://www.facebook.com/share/p/176ySRpuhV/" target="_blank"><h4> Urbanización Matalinda, Charallave</h4></a>
+                <p class="property-price">$35.000</p>
             </div>
-        <?php endforeach; ?>
+        </div>
+
+        <div class="property-card post" data-category="venta">
+            <img src="https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/530236499_10236947319730001_8630639392519717851_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=946e27&_nc_ohc=ZT2Hd5BCo98Q7kNvwG1928O&_nc_oc=Adn-cnUK1l_cgl2NuC7KFEPP96ZREd4PGealGuzIMnayTFCRZT7ACmOiKK2BWvAZTbo&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=WdMSImp07VlEc-fJLaLkbg&oh=00_AfUz0FmjqaZUIzENFiWYiElkiIeE-4rVRGVHbP-1bO1smg&oe=68B82E87" alt="Sector La Calceta, Santa Teresa" loading="lazy">
+            <div class="property-info">
+                <a href="https://www.facebook.com/commerce/listing/2281628242235310?ref=share_attachment&locale=es_LA" target="_blank"><h4>Sector La Calceta, Santa Teresa</h4></a>
+                <p class="property-price">$13.500</p>
+            </div>
+        </div>
+
+        <div class="property-card post" data-category="venta">
+            <img src="https://scontent.fmrd1-2.fna.fbcdn.net/v/t45.5328-4/540345303_4050064418566736_4530062322498297564_n.jpg?stp=dst-jpg_p960x960_tt6&_nc_cat=102&ccb=1-7&_nc_sid=247b10&_nc_ohc=LkC85lzm60kQ7kNvwEEMKV1&_nc_oc=AdkIG-hZ9CTvU0VhZYZVgN8DSG9wQ5ShjcYVZkcEsMbbdr0eT81EmlizuTVMMudRjHI&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=TCYE39NQXTdj3M8Knr5xyg&oh=00_AfXkdtXjsGwfSTMPj5ckYhCwQxFJ69nKbXogOQiKBOh0Vw&oe=68B82738" alt="Centro Comercial Betania, Cua" loading="lazy">
+            <div class="property-info">
+                <a href="https://www.facebook.com/share/p/176pG7iDQs/" target="_blank"><h4>Centro Comercial Betania, Cua</h4></a>
+                <p class="property-price">$27.000</p>
+            </div>
+        </div>
+
+        <div class="property-card post" data-category="alquiler">
+            <img src="https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/539484959_3307166206126604_7903385407956330111_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=100&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=eMUCOHLGXb0Q7kNvwF4k5OT&_nc_oc=Adl6lXSGEnFlPKEdFtT4rPDAv27Yzk5TFAyYJnMVn18q4NhcJ5ejFR7fe4tgh9j0ZgQ&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=AvKPdaxudLi-RSu-TZdm_g&oh=00_AfUqIkHVqHRqQ1azu1KIcOZ8q7JP85R6kH3qaxlY2LjpNA&oe=68B81E10" alt="Residencia Charleville, Cua" loading="lazy">
+            <div class="property-info">
+                <a href="https://www.facebook.com/commerce/listing/24320502317604601/?ref=share_attachment&locale=es_LA" target="_blank"><h4>Residencia Charleville, Cua</h4></a>
+                <p class="property-price">Alquiler</p>
+            </div>
+        </div>
+
+        <div class="property-card post" data-category="alquiler">
+            <img src="https://scontent-mia3-3.xx.fbcdn.net/v/t39.30808-6/540592951_4048620278785990_3515025977535038336_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=SLfIYBbMCVIQ7kNvwHSOp5I&_nc_oc=Adkt-gEpm54zdqN3YhsmIxdJ_vmpKJZDEGZMclZSoJ6qQdj5V9M7o_rJmhmECL_5_uM&_nc_zt=23&_nc_ht=scontent-mia3-3.xx&_nc_gid=-6vBXwkGkhHMC__HnBEhqw&oh=00_AfY1Csrx4ieUxlH9WI7-DDYMSIzPuMoV_whI6bppfeI9BA&oe=68BEBF0A" alt="Casco Central, Charallave" loading="lazy">
+            <div class="property-info">
+                <a href="https://www.facebook.com/share/p/1A2DzMMLuB/" target="_blank"><h4>Casco Central, Charallave</h4></a>
+                <p class="property-price">Alquiler</p>
+            </div>
+        </div>
+
+        <div class="property-card post" data-category="venta">
+            <img src="https://scontent-mia5-1.xx.fbcdn.net/v/t39.30808-6/539600456_4207360692829630_3516161984707411747_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=104&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=oYzMT3Zz65UQ7kNvwHHnZeN&_nc_oc=AdmtUwTpetvEBqWPwUoJOGCyqiwlzT0bXL8TxyyzCMm7tQPTI-PxfeUHVJpYbD_7sGk&_nc_zt=23&_nc_ht=scontent-mia5-1.xx&_nc_gid=Kce4UgJqA2hZMXiYHNm-yQ&oh=00_AfYTbTKseYIqrIsA8ur9sr_7n-BUSyNI2ypeG5JCzXVlJA&oe=68BEAAF4" alt="Residencias Las Violetas, cUA" loading="lazy">
+            <div class="property-info">
+                <a href="https://www.facebook.com/share/p/17Cb2r7Lr8/" target="_blank"><h4>Residencias Las Violetas, Cua</h4></a>
+                <p class="property-price">$16.000</p>
+            </div>
+        </div>
+
+        <div class="property-card post" data-category="venta">
+            <img src="https://scontent.fmrd1-2.fna.fbcdn.net/v/t45.5328-4/534501103_1709648149838074_6115432414385923227_n.jpg?stp=dst-jpg_p960x960_tt6&_nc_cat=109&ccb=1-7&_nc_sid=247b10&_nc_ohc=NhccN10BrRYQ7kNvwGI86Q_&_nc_oc=Adme2EBqBLWavVFwmLzaeIsIFlWtPn-ZAmApDxoIjwptvu67hgGkVd9KfYmRdAj5gL4&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=f8Vzyz-SyxFq0tDNv4hLJw&oh=00_AfWc_30ndAc08Wv1Ony_C-RLD-CIyj70gZ9tQgQwXf4EZA&oe=68B5676A" alt="Urbanización Valle Alto, Ocumare del tuy" loading="lazy">
+            <div class="property-info">
+                <a href="https://www.facebook.com/marketplace/item/1413221016426898?rid=25271403902447298&ad_id&rt=1&refID=0&refType=0&referral_code=commerce_attachment" target="_blank"><h4>Urbanización Valle Alto, Ocumare del Tuy</h4></a>
+                <p class="property-price">$10.000</p>
+            </div>
+        </div>
+
+        <div class="property-card post" data-category="venta">
+            <img src="https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/536268334_4223651534544424_202572438350009121_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=103&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=KxVfQjwhZdgQ7kNvwHPDiLw&_nc_oc=AdmtKxVMIkXjOB1PWStIZkDefQTR4cIauQcn09UCs25UHpVBNv481UPNYCSQ1KBslM0&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=sYAv6cjw_D5-xqojTr7JVg&oh=00_AfWQv8EpD9SrevkUB9c5AVAiBRCQz6rbJJeoWsDgFeBuUw&oe=68B59345" alt="Residencia Mibeli, Santa Teresa del Tuy" loading="lazy">
+            <div class="property-info">
+                <a href="https://www.facebook.com/commerce/listing/610113392173208/?ref=share_attachment" target="_blank"><h4>Residencia Mibeli, Santa Teresa del Tuy</h4></a>
+                <p class="property-price">$10.000</p>
+            </div>
+        </div>
+
+        <div class="property-card post" data-category="venta">
+            <img src="https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/536282877_2327226941025440_6249698684398211864_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=111&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=NXEy_oVS9rEQ7kNvwHFYX1j&_nc_oc=AdlWr1sB9CnArqPOwnPnWhyw7iEJbgfTzIwBZxIj9-4RKDzjFL_czWVkEN2Wqz27nak&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=zmKgbAh_pj4ar08CdqUGUQ&oh=00_AfURwCZQ_ybExBZQRYA0CfpykKztaXuQp7gtxTIfIBANHQ&oe=68B5631E" alt="Urbanizacion Mata Linda, Charallave" loading="lazy">
+            <div class="property-info">
+                <a href="https://www.facebook.com/commerce/listing/1080185164311985/?ref=share_attachment" target="_blank"><h4>Urbanización Mata Linda, Charallave</h4></a>
+                <p class="property-price">$18.000</p>
+            </div>
+        </div>
+
+        <div class="property-card post" data-category="venta">
+            <img src="https://scontent.fmrd1-2.fna.fbcdn.net/v/t39.30808-6/538108593_24616055271346987_1762748752322163775_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=108&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=TOxlFEuTniYQ7kNvwEjcGur&_nc_oc=AdmW5qM00icLgfbIaZca7OxFvOxZcoCkW3G6wHJe4bmfauRT4XzMDBCRgn-nd5MWyiA&_nc_zt=23&_nc_ht=scontent.fmrd1-2.fna&_nc_gid=Ns_CHlFIE6Y6HWQmjgG9Qw&oh=00_AfVgiJubSI5LHqC2i4U0V2-gvuT8GwgABWxC5CGpB90GvQ&oe=68B57A67" alt="Urbanización Las BrisaS, Cua" loading="lazy">
+            <div class="property-info">
+                <a href="https://www.facebook.com/commerce/listing/1334728568176904/?ref=share_attachment" target="_blank"><h4>Urbanización Las Brisas, Cua</h4></a>
+                <p class="property-price">$35.000</p>
+            </div>
+        </div>
     </div>
 
     <section class="container" id="contact">
@@ -141,10 +126,5 @@ $properties = [
         <p>&copy; 2025 Buscador de publicaciones (Facebook) Marketplace Ocumare del Tuy y Valles Del Tuy 💸</p>
     </footer>
     <script src="script.js"></script>
-    <script>
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-    });
-    </script>
 </body>
 </html>

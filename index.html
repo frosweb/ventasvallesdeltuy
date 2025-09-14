@@ -9,9 +9,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
-</head>
+</header>
 <body>
     <header class="hero-section">
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="img/img.jpg" alt="Sector el Calvario, Ocumare del Tuy" loading="lazy">
+           </div>
+        <div class="mySlides fade">
+            <img src="img/img-15.jpg" alt="Sector el Calvario, Ocumare del Tuy" loading="lazy">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/img-1.jpg" alt="Sector el Calvario, Ocumare del Tuy" loading="lazy">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/img-14.jpg" alt="Sector el Calvario, Ocumare del Tuy" loading="lazy">
+        </div>
+        
         <div class="header-content">
             <h1>Tu Nuevo Hogar Te Espera</h1>
             <a href="https://www.facebook.com/groups/1159228138826054" target="_blank" rel="noopener noreferrer">
@@ -30,8 +44,35 @@
                 Sígueme en Facebook
             </a>
         </div>
-    </header>
-    <div class="property-grid" id="inicio">
+        
+        <div class="dot-container">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</header>
+  <div class="property-grid" id="inicio">
+        <div class="property-card post" data-category="venta" id="venta">
+            <img src="img/img-14.jpg" alt="Sector el Calvario, Ocumare del Tuy" loading="lazy">
+            <div class="property-info">
+                <a href="https://www.facebook.com/groups/1159228138826054/permalink/1277253423690191/?rdid=g0tY8Rw8x07L4SnA#" target="_blank" rel="noopener noreferrer">
+                    <h4>Sector El Calvario, Ocumare del Tuy</h4>
+                </a>
+                <p class="property-price">$13.000</p>
+            </div>
+        </div>
+        <div class="property-card post" data-category="venta" id="venta">
+            <img src="img/img-13.jpg" alt="Urbanización Valle Alto 1, Ocumare del Tuy" loading="lazy">
+            <div class="property-info">
+                <a href="https://www.facebook.com/groups/1159228138826054/permalink/1277253423690191/?rdid=g0tY8Rw8x07L4SnA#" target="_blank" rel="noopener noreferrer">
+                    <h4>Urbanización Valle Alto 1, Ocumare del Tuy</h4>
+                </a>
+                <p class="property-price">$11.000</p>
+            </div>
+        </div>
+        
         <div class="property-card post" data-category="venta" id="venta">
             <img src="img/img-1.jpg" alt="Urbanización Vista Real, Charallave" loading="lazy">
             <div class="property-info">
@@ -151,20 +192,22 @@
         </div>
     </div>
     <section class="container" id="contact">
-        <div class="contact-form">
-            <h2>¿Interesado en una propiedad? Contáctame</h2>
-            <form action="mailto:omarbandes@gmail.com" method="post" enctype="text/plain" id="contacto">
-                <input type="text" name="name" placeholder="Tu Nombre Completo" required>
-                <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
-                <textarea name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
-                <button type="submit">Enviar Mensaje</button>
-            </form>
-        </div>
+        
+            <div class="contact-form">
+    <h2>¿Interesado en una propiedad? Contáctame</h2>
+    <form action="send_email.php" method="post" id="contacto">
+        <input type="text" name="name" placeholder="Tu Nombre Completo" required>
+        <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
+        <textarea name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
+        <button type="submit">Enviar Mensaje</button>
+    </form>
+</div>
+            
     </section>
     <footer class="footer">
         <p>&copy; 2025 Buscador de publicaciones (Facebook) Marketplace Ocumare del Tuy y Valles Del Tuy 💸</p>
     </footer>
     <script src="script.js"></script>
+    <script src="slideshow.js"></script>
 </body>
 </html>
-

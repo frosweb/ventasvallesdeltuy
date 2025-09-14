@@ -1,3 +1,37 @@
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  
+  // Ocultar todas las diapositivas
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  
+  // Quitar la clase 'active' de todos los puntos
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  
+  // Incrementar el índice y reiniciarlo si se excede el número de diapositivas
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  
+  // Mostrar la diapositiva actual y activar el punto correspondiente
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+  
+  // Llamar a la función cada 5 segundos
+  setTimeout(showSlides, 5000);
+}
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
     const posts = document.querySelectorAll('.post');

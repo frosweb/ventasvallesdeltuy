@@ -3,99 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pagina web anclada a grupo de facebook para busqueda de inmueble para la compra, venta y alquiler">
-    <meta name="keywords" content="compra, venta, alquiler, negocio, dinero, inmueble, bienes raices, ocumare del tuy, valles del tuy">
-    <title>"Compraventa Valles del Tuy: Artículos de segunda mano y nuevos"</title>
+    <title>Marketplace Valles del Tuy: Artículos y Ropa - Compra Venta</title>
+    <meta name="description" content="Marketplace de artículos de segunda mano y nuevos en Valles del Tuy, Ocumare del Tuy. Ropa, variedad y más.">
+    <meta name="keywords" content="ropa, articulos, variedad, segunda mano, compra, venta, ocumare del tuy, valles del tuy, caracas">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link rel="stylesheet" href="style.css">
-</header>
+</head>
 <body>
     <header class="hero-section">
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="img/img.jpg" alt="Ocumare del Tuy" loading="lazy">
-           </div>
-     
-        <div class="mySlides fade">
-            <img src="img/img.jpg" alt="Markeplace" loading="lazy">
+        <div class="slideshow-container">
+            
+            <div class="mySlides fade">
+                <img src="img/img.jpg" alt="Vista general de Ocumare del Tuy" loading="lazy">
+            </div>
+            <div class="mySlides fade">
+                <img src="img/img-1.jpg" alt="Regadera tipo lluvia de 10 pulgadas" loading="lazy">
+            </div>
+            <div class="header-content">
+                <h1>Variedades en Artículos</h1> 
+                <a href="https://www.facebook.com/groups/1159228138826054" target="_blank" rel="noopener noreferrer" class="group-link">
+                    <h2>Marketplace Ocumare del Tuy y Valles Del Tuy 💸</h2>
+                </a>
+                
+                <nav class="main-nav">
+                    <ul class="nav-menu">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#ropa-section">Ropa</a></li>
+                        <li><a href="#variedad-section">Variedad</a></li>
+                        <li><a href="#formulario-contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                
+                <input type="text" id="searchInput" placeholder="Buscar publicaciones...">
+                
+                <a href="https://www.facebook.com/groups/1159228138826054" target="_blank" rel="nofollow noopener noreferrer" class="facebook-button">
+                    Síguenos en Facebook
+                </a>
+            </div>
+            
+            <div class="dot-container">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                </div>
         </div>
-         <div class="header-content">
-            <h2>Variedades en articulos</h2>
-            <a href="https://www.facebook.com/groups/1159228138826054" target="_blank" rel="noopener noreferrer">
-                <h2>Marketplace Ocumare del Tuy y Valles Del Tuy 💸</h2>
-            </a>
-            <nav class="main-nav">
-                <ul class="nav-menu">
-                    <li><a href="https://frosweb.github.io/ventasvallesdeltuy/">Inicio</a></li>
-                    <li><a href="#venta">Ropa</a></li>
-                    <li><a href="#alquiler">Variedad</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-            <input type="text" id="searchInput" placeholder="Buscar publicaciones...">
-            <a href="https://www.facebook.com/groups/1159228138826054" target="_blank" rel="noopener noreferrer" class="facebook-button">
-                Sígueme en Facebook
-            </a>
-        </div>
+    </header>
+
+    <div class="property-grid" id="inicio">
+        <h3 id="ropa-section">Ropa en Oferta</h3>
         
-        <div class="dot-container">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-</header>
-  <div class="property-grid" id="inicio">
-       <div class="property-card post" data-category="Ropa" id="venta">
-            <img src="img/img-1.jpg" alt="Franelas de caballero en DTF" loading="lazy">
+        <div class="property-card post" data-category="Ropa">
+            <img src="img/img-1.jpg" alt="Franelas de caballero en DTF, variedad de colores" loading="lazy">
             <div class="property-info">
-                <a href="https://www.facebook.com/commerce/listing/1756372511653237/?ref=share_attachment#" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/commerce/listing/1756372511653237/?ref=share_attachment#" target="_blank" rel="nofollow noopener noreferrer">
                     <h4>Franelas de caballero en DTF, Caracas</h4>
                 </a>
                 <p class="property-price">6$ Oferta</p>
             </div>
         </div>
-      
-        <div class="property-card post" data-category="Variedad" id="Variedad">
-            <img src="img/img-2.jpg" alt="Regadera tipo lluvia de 10" loading="lazy">
+        
+        <h3 id="variedad-section">Artículos Varios</h3>
+
+        <div class="property-card post" data-category="Variedad">
+            <img src="img/img-2.jpg" alt="Regadera tipo lluvia de 10 pulgadas para baño" loading="lazy">
             <div class="property-info">
-                <a href="https://www.facebook.com/commerce/listing/1834286767474686/?ref=share_attachment#" target="_blank" rel="noopener noreferrer">
-                    <h4>Regadera tipo lluvia de 10, Caracas</h4>
+                <a href="https://www.facebook.com/commerce/listing/1834286767474686/?ref=share_attachment#" target="_blank" rel="nofollow noopener noreferrer">
+                    <h4>Regadera tipo lluvia de 10", Caracas</h4>
                 </a>
                 <p class="property-price">$10</p>
             </div>
         </div>
-        <div class="property-card post" data-category="Variedad" id="Variedad">
-            <img src="img/img-3.jpg" alt="Franelas con Estampado DTF, Caracas" loading="lazy">
+        
+        <div class="property-card post" data-category="Variedad">
+            <img src="img/img-3.jpg" alt="Franelas con Estampado DTF personalizado" loading="lazy">
             <div class="property-info">
-                <a href="hhttps://www.facebook.com/commerce/listing/3285934608239205/?media_id=0&ref=share_attachment#" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/commerce/listing/3285934608239205/?media_id=0&ref=share_attachment#" target="_blank" rel="nofollow noopener noreferrer">
                     <h4>Franelas con Estampado DTF, Caracas</h4>
                 </a>
                 <p class="property-price">$6</p>
             </div>
         </div>
-            </div>
+    </div>
+
     <section class="container" id="contact">
-        
-            <div class="contact-form">
-    <h2>¿Interesado en una propiedad? Contáctame</h2>
-    <form action="send_email.php" method="post" id="contacto">
-        <input type="text" name="name" placeholder="Tu Nombre Completo" required>
-        <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
-        <textarea name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
-        <button type="submit">Enviar Mensaje</button>
-    </form>
-</div>
-            
+        <div class="contact-form">
+            <h2 id="formulario-contacto">¿Interesado? Contáctame</h2>
+            <form action="send_email.php" method="post">
+                <input type="text" name="name" placeholder="Tu Nombre Completo" required>
+                <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
+                <textarea name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </div>
     </section>
+    
     <footer class="footer">
-         <li><a href="https://frosweb.github.io/ventasvallesdeltuy/"><p>&copy; 2025 Buscador de publicaciones (Facebook) Marketplace Ocumare del Tuy y Valles Del Tuy 💸</p></a></li>
+        <p><a href="https://frosweb.github.io/ventasvallesdeltuy/" target="_blank" rel="nofollow noopener noreferrer">&copy; 2025 Buscador de publicaciones (Facebook) Marketplace Ocumare del Tuy y Valles Del Tuy 💸</a></p>
     </footer>
-    <script src="script.js"></script>
-    <script src="slideshow.js"></script>
+    
+    <script src="script.js" defer></script>
+    <script src="slideshow.js" defer></script>
 </body>
 </html>
-
-

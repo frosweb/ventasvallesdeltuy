@@ -1,78 +1,88 @@
+et slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  
+  // Ocultar todas las diapositivas
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  
+  // Quitar la clase 'active' de todos los puntos
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  
+  // Incrementar el índice y reiniciarlo si se excede el número de diapositivas
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  
+  // Mostrar la diapositiva actual y activar el punto correspondiente
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+  
+  // Llamar a la función cada 5 segundos
+  setTimeout(showSlides, 5000);
+}
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. Elementos del DOM ---
     const searchInput = document.getElementById('searchInput');
-    const searchClear = document.getElementById('searchClear');
-    const searchCategory = document.getElementById('searchCategory');
-    const propertyCards = document.querySelectorAll('.property-card');
-    const backToTopBtn = document.getElementById('backToTopBtn');
+    const posts = document.querySelectorAll('.post');
 
-    // --- 2. Funcionalidad de Búsqueda y Filtrado Optimizada ---
+    searchInput.addEventListener('keyup', function() {
+        const searchTerm = this.value.toLowerCase(); // Término de búsqueda en minúsculas
 
-    function filterProperties() {
-        // Obtiene y normaliza el término de búsqueda
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        // Obtiene la categoría seleccionada
-        const selectedCategory = searchCategory.value;
+        posts.forEach(post => {
+            // Se busca en el título, el contenido y las etiquetas
+            const postText = post.textContent.toLowerCase();
+            const postImageAlt = post.querySelector('img').alt.toLowerCase();
 
-        // Muestra/Oculta el botón de borrado de la búsqueda
-        searchClear.style.display = searchTerm.length > 0 ? 'inline-block' : 'none';
-
-        propertyCards.forEach(card => {
-            // Lee la categoría de la tarjeta (data-category="venta" o "alquiler")
-            const cardCategory = card.getAttribute('data-category');
-            const cardTitle = card.querySelector('h4')?.textContent.toLowerCase() || '';
-            const cardAlt = card.querySelector('img')?.alt.toLowerCase() || '';
-
-            // Condición 1: Coincidencia de Categoría (true si es 'all' o si coincide)
-            const matchesCategory = selectedCategory === 'all' || cardCategory === selectedCategory;
-
-            // Condición 2: Coincidencia de Término (true si no hay término o si coincide con título/alt)
-            const matchesSearch = searchTerm === '' || cardTitle.includes(searchTerm) || cardAlt.includes(searchTerm);
-
-            // Muestra la tarjeta si cumple AMBAS condiciones
-            if (matchesCategory && matchesSearch) {
-                card.style.display = 'block';
+            if (postText.includes(searchTerm) || postImageAlt.includes(searchTerm)) {
+                post.style.display = 'flex'; // Muestra la publicación si hay coincidencia
             } else {
-                card.style.display = 'none';
+                post.style.display = 'none'; // Oculta la publicación
             }
         });
-    }
-
-    // --- 3. Asignación de Event Listeners ---
-    
-    // Filtra dinámicamente al escribir
-    searchInput.addEventListener('input', filterProperties);
-    
-    // Filtra al cambiar la categoría
-    searchCategory.addEventListener('change', filterProperties);
-    
-    // Limpia el input y resetea los filtros al hacer clic en la 'X'
-    searchClear.addEventListener('click', () => {
-        searchInput.value = '';
-        searchCategory.value = 'all'; 
-        filterProperties();
-        searchInput.focus(); // Devuelve el foco al campo de búsqueda
     });
-    
-    // --- 4. Funcionalidad de Volver Arriba ---
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    const posts = document.querySelectorAll('.property-card');
 
-    // Muestra el botón cuando el scroll baja 300px
-    function toggleBackToTopButton() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            backToTopBtn.style.display = "block";
-        } else {
-            backToTopBtn.style.display = "none";
-        }
-    }
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Prevent the default anchor jump
+            e.preventDefault(); 
+            
+            // Get the category from the link's href
+            const category = link.getAttribute('href').substring(1); 
+            
+            // If the category is "inicio", show all posts
+            if (category === 'inicio') {
+                posts.forEach(post => {
+                    post.style.display = 'block';
+                });
+            } else {
+                // Otherwise, show only the posts that match the category
+                posts.forEach(post => {
+                    const postCategory = post.getAttribute('data-category');
+                    if (postCategory === category) {
+                        post.style.display = 'block';
+                    } else {
+                        post.style.display = 'none';
+                    }
+                });
+            }
 
-    // Llama a la función al hacer scroll
-    window.addEventListener('scroll', toggleBackToTopButton);
-
-    // Al hacer clic, desplaza la página al inicio
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth' // Desplazamiento suave
+            // Scroll to the top of the property grid
+            document.getElementById('inicio').scrollIntoView({ behavior: 'smooth' });
         });
     });
 });

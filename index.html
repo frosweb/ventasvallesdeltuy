@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button id="backToTopBtn" title="Volver arriba">🔝</button>
+
     <header class="hero-section">
         <div class="slideshow-container">
             <div class="mySlides fade">
@@ -30,7 +32,7 @@
 
             <div class="header-content">
                 <h1>Variedades en Artículos e Inmuebles</h1>
-                <a href="https://www.facebook.com/groups/1159228138826054" target="_blank" rel="noopener noreferrer" class="group-link">
+                <a href="https://www.facebook.com/groups/1159228138826054" target="_blank" rel="nofollow noopener noreferrer" class="group-link">
                     <h2>Marketplace Ocumare del Tuy y Valles Del Tuy 💸</h2>
                 </a>
                 
@@ -44,7 +46,15 @@
                     </ul>
                 </nav>
                 
-                <input type="text" id="searchInput" placeholder="Buscar publicaciones...">
+                <div class="search-box-container">
+                    <input type="text" id="searchInput" placeholder="Buscar inmuebles...">
+                    <button id="searchClear" style="display: none;">❌</button>
+                    <select id="searchCategory" title="Filtrar por categoría">
+                        <option value="all">Todas las categorías</option>
+                        <option value="venta">Venta</option>
+                        <option value="alquiler">Alquiler</option>
+                    </select>
+                </div>
                 
                 <a href="https://www.facebook.com/groups/1159228138826054" target="_blank" rel="nofollow noopener noreferrer" class="facebook-button">
                     Síguenos en Facebook
@@ -63,7 +73,7 @@
     <div class="property-grid" id="inicio">
         <h3 id="propiedades-venta">Propiedades en Venta</h3>
 
-        <div class="property-card post" data-category="venta" id="venta">
+        <div class="property-card post" data-category="venta"> 
             <img src="img/img-22.jpg" alt="Urbanización La Colina, Charallave" loading="lazy">
             <div class="property-info">
                 <a href="https://www.facebook.com/marketplace/item/800434792575198?rid=10234442916509189&ad_id&rt=1&refID=0&refType=0&referral_code=commerce_attachment#" target="_blank" rel="nofollow noopener noreferrer">
@@ -185,8 +195,9 @@
         
         
         <h3 id="propiedades-alquiler">Propiedades en Alquiler</h3>
-        <div class="property-card post" data-category="alquiler" id="alquiler">
-           <img src="img/img-8.jpg" alt="Residencia Charleville, Cua" loading="lazy">
+        
+        <div class="property-card post" data-category="alquiler">
+            <img src="img/img-8.jpg" alt="Residencia Charleville, Cua" loading="lazy">
             <div class="property-info">
                 <a href="https://www.facebook.com/commerce/listing/24320502317604601/?ref=share_attachment&locale=es_LA" target="_blank" rel="nofollow noopener noreferrer">
                     <h4>Residencia Charleville, Cua</h4>
@@ -206,7 +217,7 @@
         </div>
         
         <div class="property-card post" data-category="venta">
-            <img src="img/img-9.jpg" alt="Urbanización Valle Alto, Ocumare del tuy" loading="lazy">
+            <img src="img/img-9.jpg" alt="Urbanización Valle Alto, Ocumare del tuy, Venta" loading="lazy">
             <div class="property-info">
                 <a href="https://www.facebook.com/marketplace/item/1413221016426898?rid=25271403902447298&ad_id&rt=1&refID=0&refType=0&referral_code=commerce_attachment" target="_blank" rel="nofollow noopener noreferrer">
                     <h4>Urbanización Valle Alto, Ocumare del Tuy</h4>
@@ -216,7 +227,7 @@
         </div>
         
         <div class="property-card post" data-category="venta">
-            <img src="img/img-10.jpg" alt="Residencia Mibeli, Santa Teresa del Tuy" loading="lazy">
+            <img src="img/img-10.jpg" alt="Residencia Mibeli, Santa Teresa del Tuy, Venta" loading="lazy">
             <div class="property-info">
                 <a href="https://www.facebook.com/commerce/listing/610113392173208/?ref=share_attachment" target="_blank" rel="nofollow noopener noreferrer">
                     <h4>Residencia Mibeli, Santa Teresa del Tuy</h4>
@@ -226,7 +237,7 @@
         </div>
         
         <div class="property-card post" data-category="venta">
-            <img src="img/img-11.jpg" alt="Urbanizacion Mata Linda, Charallave" loading="lazy">
+            <img src="img/img-11.jpg" alt="Urbanizacion Mata Linda, Charallave, Venta" loading="lazy">
             <div class="property-info">
                 <a href="https://www.facebook.com/commerce/listing/1080185164311985/?ref=share_attachment" target="_blank" rel="nofollow noopener noreferrer">
                     <h4>Urbanización Mata Linda, Charallave</h4>
@@ -236,7 +247,7 @@
         </div>
         
         <div class="property-card post" data-category="venta">
-            <img src="img/img-12.jpg" alt="Urbanización Las Brisas, Cua" loading="lazy">
+            <img src="img/img-12.jpg" alt="Urbanización Las Brisas, Cua, Venta" loading="lazy">
             <div class="property-info">
                 <a href="https://www.facebook.com/commerce/listing/1334728568176904/?ref=share_attachment" target="_blank" rel="nofollow noopener noreferrer">
                     <h4>Urbanización Las Brisas, Cua</h4>
@@ -266,4 +277,3 @@
     <script src="slideshow.js" defer></script>
 </body>
 </html>
-

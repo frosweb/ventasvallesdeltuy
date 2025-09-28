@@ -1,127 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Obtener el campo de búsqueda y todas las tarjetas de propiedad
+    // --- Elementos del DOM ---
     const searchInput = document.getElementById('searchInput');
+    const searchClear = document.getElementById('searchClear');
+    const searchCategory = document.getElementById('searchCategory');
     const propertyCards = document.querySelectorAll('.property-card');
+    const backToTopBtn = document.getElementById('backToTopBtn');
 
-    // 2. Definir la función de búsqueda/filtrado
+    // --- Funcionalidad de Búsqueda Optimizada por Categoría ---
+
     function filterProperties() {
-        // Obtener el valor del campo de búsqueda y convertirlo a minúsculas
-        const searchTerm = searchInput.value.toLowerCase();
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const selectedCategory = searchCategory.value;
 
-        // Iterar sobre cada tarjeta de propiedad
+        // Mostrar/Ocultar el botón de borrado
+        searchClear.style.display = searchTerm.length > 0 ? 'inline-block' : 'none';
+
         propertyCards.forEach(card => {
-            // Obtener el texto completo de la tarjeta (título y alt de imagen)
+            const cardCategory = card.getAttribute('data-category');
             const cardTitle = card.querySelector('h4').textContent.toLowerCase();
             const cardAlt = card.querySelector('img').alt.toLowerCase();
 
-            // Verificar si el término de búsqueda está presente en el título o en el texto alternativo (alt)
-            if (cardTitle.includes(searchTerm) || cardAlt.includes(searchTerm) || searchTerm === '') {
-                // Mostrar la tarjeta (si hay coincidencia o si el campo de búsqueda está vacío)
+            // 1. Filtrar por Categoría: (Si la categoría seleccionada no es 'all' y la tarjeta no coincide)
+            const matchesCategory = selectedCategory === 'all' || cardCategory === selectedCategory;
+
+            // 2. Filtrar por Término: (Si el término de búsqueda está vacío O si coincide con el título/alt)
+            const matchesSearch = searchTerm === '' || cardTitle.includes(searchTerm) || cardAlt.includes(searchTerm);
+
+            // 3. Mostrar tarjeta solo si cumple AMBAS condiciones
+            if (matchesCategory && matchesSearch) {
                 card.style.display = 'block';
             } else {
-                // Ocultar la tarjeta (si no hay coincidencia)
                 card.style.display = 'none';
             }
         });
     }
 
-    // 3. Asignar el evento 'input' al campo de búsqueda
-    // El evento 'input' se dispara cada vez que el usuario escribe o borra un carácter.
+    // --- Event Listeners para la Búsqueda ---
+    
+    // Filtra al escribir
     searchInput.addEventListener('input', filterProperties);
     
-    // NOTA: Si también quieres que el carrusel funcione (slideshow.js),
-    // el código para manejar los slides debe estar en el archivo slideshow.js.
-});
+    // Filtra al cambiar la categoría
+    searchCategory.addEventListener('change', filterProperties);
+    
+    // Limpia el input y resetea los filtros al hacer clic
+    searchClear.addEventListener('click', () => {
+        searchInput.value = '';
+        searchCategory.value = 'all'; // Opcional: Resetea también la categoría
+        filterProperties();
+    });
+    
+    // --- Funcionalidad Visual (Volver Arriba) ---
 
+    // Mostrar el botón cuando se desplaza
+    window.onscroll = function() { scrollFunction() };
 
+    function scrollFunction() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopBtn.style.display = "block";
+        } else {
+            backToTopBtn.style.display = "none";
+        }
+    }
 
-
-let slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  
-  // Ocultar todas las diapositivas
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  
-  // Quitar la clase 'active' de todos los puntos
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  
-  // Incrementar el índice y reiniciarlo si se excede el número de diapositivas
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
-  
-  // Mostrar la diapositiva actual y activar el punto correspondiente
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-  
-  // Llamar a la función cada 5 segundos
-  setTimeout(showSlides, 5000);
-}
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('searchInput');
-    const posts = document.querySelectorAll('.post');
-
-    searchInput.addEventListener('keyup', function() {
-        const searchTerm = this.value.toLowerCase(); // Término de búsqueda en minúsculas
-
-        posts.forEach(post => {
-            // Se busca en el título, el contenido y las etiquetas
-            const postText = post.textContent.toLowerCase();
-            const postImageAlt = post.querySelector('img').alt.toLowerCase();
-
-            if (postText.includes(searchTerm) || postImageAlt.includes(searchTerm)) {
-                post.style.display = 'flex'; // Muestra la publicación si hay coincidencia
-            } else {
-                post.style.display = 'none'; // Oculta la publicación
-            }
-        });
+    // Al hacer clic, vuelve al inicio de la página
+    backToTopBtn.addEventListener('click', () => {
+        document.body.scrollTop = 0; // Para Safari
+        document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
     });
 });
-document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    const posts = document.querySelectorAll('.property-card');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Prevent the default anchor jump
-            e.preventDefault(); 
-            
-            // Get the category from the link's href
-            const category = link.getAttribute('href').substring(1); 
-            
-            // If the category is "inicio", show all posts
-            if (category === 'inicio') {
-                posts.forEach(post => {
-                    post.style.display = 'block';
-                });
-            } else {
-                // Otherwise, show only the posts that match the category
-                posts.forEach(post => {
-                    const postCategory = post.getAttribute('data-category');
-                    if (postCategory === category) {
-                        post.style.display = 'block';
-                    } else {
-                        post.style.display = 'none';
-                    }
-                });
-            }
-
-            // Scroll to the top of the property grid
-            document.getElementById('inicio').scrollIntoView({ behavior: 'smooth' });
-        });
-    });
-});
-

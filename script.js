@@ -1,3 +1,41 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Obtener el campo de búsqueda y todas las tarjetas de propiedad
+    const searchInput = document.getElementById('searchInput');
+    const propertyCards = document.querySelectorAll('.property-card');
+
+    // 2. Definir la función de búsqueda/filtrado
+    function filterProperties() {
+        // Obtener el valor del campo de búsqueda y convertirlo a minúsculas
+        const searchTerm = searchInput.value.toLowerCase();
+
+        // Iterar sobre cada tarjeta de propiedad
+        propertyCards.forEach(card => {
+            // Obtener el texto completo de la tarjeta (título y alt de imagen)
+            const cardTitle = card.querySelector('h4').textContent.toLowerCase();
+            const cardAlt = card.querySelector('img').alt.toLowerCase();
+
+            // Verificar si el término de búsqueda está presente en el título o en el texto alternativo (alt)
+            if (cardTitle.includes(searchTerm) || cardAlt.includes(searchTerm) || searchTerm === '') {
+                // Mostrar la tarjeta (si hay coincidencia o si el campo de búsqueda está vacío)
+                card.style.display = 'block';
+            } else {
+                // Ocultar la tarjeta (si no hay coincidencia)
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // 3. Asignar el evento 'input' al campo de búsqueda
+    // El evento 'input' se dispara cada vez que el usuario escribe o borra un carácter.
+    searchInput.addEventListener('input', filterProperties);
+    
+    // NOTA: Si también quieres que el carrusel funcione (slideshow.js),
+    // el código para manejar los slides debe estar en el archivo slideshow.js.
+});
+
+
+
+
 let slideIndex = 0;
 showSlides();
 
@@ -86,3 +124,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+

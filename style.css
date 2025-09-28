@@ -1,31 +1,24 @@
-/* --- Estilos para la Búsqueda Optimizada --- */
+CSS
+
+/* ==================================== */
+/* ESTILOS DE BÚSQUEDA Y FILTRO */
+/* ==================================== */
 
 .search-box-container {
-    display: flex; /* Para alinear el input, el botón de borrado y el selector */
+    display: flex; 
     align-items: center;
-    gap: 5px; /* Pequeño espacio entre elementos */
-    margin-top: 15px;
-    width: 100%;
-    max-width: 400px; /* Limita el ancho del contenedor */
-    margin-left: auto;
-    margin-right: auto;
+    gap: 8px; /* Espacio entre los elementos */
+    margin: 15px auto 25px auto; /* Espaciado con margen automático para centrar */
+    width: 90%;
+    max-width: 600px; 
 }
 
 #searchInput {
-    flex-grow: 1; /* Permite que el input ocupe el espacio restante */
-    padding-right: 35px; /* Espacio para el botón de borrado */
-}
-
-#searchClear {
-    padding: 8px 10px;
-    background: #ff4d4d; /* Rojo para indicar borrado */
-    color: white;
-    border: none;
+    flex-grow: 1; /* Permite que el input ocupe el espacio principal */
+    padding: 10px 15px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    line-height: 1;
-    height: 38px; /* Altura para alinearse con el input */
+    font-size: 1rem;
 }
 
 #searchCategory {
@@ -33,30 +26,51 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
-    height: 38px;
+    background-color: #f9f9f9;
+}
+
+#searchClear {
+    padding: 9px 12px;
+    background: #e74c3c; /* Color rojo de borrado */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1;
+    transition: background-color 0.2s;
+}
+
+#searchClear:hover {
+    background-color: #c0392b;
 }
 
 
-/* --- Estilos para el Botón "Volver Arriba" (Back-to-Top) --- */
+/* ==================================== */
+/* ESTILOS DE BOTÓN VOLVER ARRIBA */
+/* ==================================== */
 
 #backToTopBtn {
-    display: none; /* Oculto por defecto */
-    position: fixed; /* Posición fija para que se mantenga a la vista */
-    bottom: 20px; 
-    right: 20px; 
-    z-index: 99; /* Alto z-index para que esté por encima de otros elementos */
+    display: none; 
+    position: fixed; 
+    bottom: 25px; 
+    right: 25px; 
+    z-index: 100; /* Asegura que esté sobre otros contenidos */
     border: none; 
-    outline: none; 
-    background-color: #2a64b5; /* Un color distintivo */
+    background-color: #3498db; /* Azul para el botón */
     color: white; 
     cursor: pointer; 
-    padding: 15px; 
-    border-radius: 50%; /* Forma redonda */
-    font-size: 18px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
+    padding: 15px 18px; 
+    border-radius: 50%; /* Círculo perfecto */
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 #backToTopBtn:hover {
-    background-color: #0d47a1; /* Un tono más oscuro al pasar el ratón */
+    background-color: #2980b9;
+    transform: scale(1.05);
 }
+
+/* Nota: Asegúrate de que tus estilos para .property-card, .property-grid, etc.,
+permitan que el display: 'block' y display: 'none' del JS funcionen correctamente. */

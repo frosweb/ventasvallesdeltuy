@@ -1,3 +1,132 @@
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366; /* Color verde de WhatsApp */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    line-height: 60px; /* Centra el icono verticalmente */
+    text-decoration: none; /* Quita el subrayado del enlace */
+}
+
+/* Opcional: Estilo al pasar el mouse */
+.whatsapp-float:hover {
+    background-color: #128c7e;
+}
+
+
+.property-grid {
+    display: grid;
+    /* Diseño responsivo: 1 columna en móvil, 2 en tablet, 3 en escritorio */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.property-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease-in-out;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+}
+
+.property-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.property-info {
+    padding: 15px;
+}
+
+.property-title {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.property-price {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.price-rent {
+    color: var(--secondary-color); /* Color diferente para alquiler */
+}
+
+.hero-section {
+    position: relative;
+    height: 80vh; /* Altura de la vista */
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+.hero-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para cubrir el contenedor */
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo para mejor contraste */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Estilo para el botón de Facebook */
+.facebook-button {
+    background-color: #4267B2; /* Color de Facebook */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Ejemplo de CSS Clave */
+:root {
+    --primary-color: #007bff; /* Azul vibrante */
+    --secondary-color: #28a745; /* Verde para acción/alquiler */
+    --text-color: #333;
+    --background-light: #f8f9fa;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-light);
+}
+
 /*==========================================================
   ESTILOS GLOBALES Y VARIABLES
 ==========================================================*/

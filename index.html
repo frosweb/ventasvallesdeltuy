@@ -1,247 +1,324 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Buscador de inmuebles para comprar y alquilar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmuebles en Venta y Alquiler - Ocumare del Tuy y Valles del Tuy 🏡</title>
+    
+    <meta name="description" content="Encuentra tu nuevo hogar en Ocumare del Tuy y Valles del Tuy. Casas, apartamentos y town houses en venta y alquiler. ¡Publicaciones actualizadas del Marketplace!">
+    <meta name="keywords" content="inmuebles, venta, alquiler, casas, apartamentos, Ocumare del Tuy, Valles del Tuy, Charallave, Cua, Santa Teresa del Tuy, Miranda">
+    <link rel="canonical" href="[TU_URL_DEL_SITIO_WEB]">
+    
+    <meta property="og:title" content="Tu Nuevo Hogar Te Espera en Valles del Tuy | Venta y Alquiler">
+    <meta property="og:description" content="Explora las mejores propiedades en Ocumare del Tuy, Charallave, Cua y más. ¡Encuentra el inmueble perfecto!">
+    <meta property="og:image" content="[URL_DE_UNA_IMAGEN_PRINCIPAL_DE_TU_SITIO]">
+    <meta property="og:url" content="[TU_URL_DEL_SITIO_WEB]">
+    <meta property="og:type" content="website">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8g1s9/P7+F/c8Jj0O9x56Pz1N5+Nf2s/4qj1I55QyK0P18r6v68pB5fP4pQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head> <body>
+</head> 
+<body>
     <header class="hero-section">
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="img/img.jpg" alt="Sector el Calvario, Ocumare del Tuy" loading="lazy">
-           </div>
-        <div class="mySlides fade">
-            <img src="img/img-15.jpg" alt="Sector el Calvario, Ocumare del Tuy" loading="lazy">
-        </div>
-        <div class="mySlides fade">
-            <img src="img/img-1.jpg" alt="Sector el Calvario, Ocumare del Tuy" loading="lazy">
-        </div>
-        <div class="mySlides fade">
-            <img src="img/img-14.jpg" alt="Sector el Calvario, Ocumare del Tuy" loading="lazy">
-        </div>
-        
-        <div class="header-content">
-            <h1>Tu Nuevo Hogar Te Espera</h1>
-            <a href="https://www.facebook.com/groups/1159228138826054" target="_blank" rel="noopener noreferrer">
-                <h2>Marketplace Ocumare del Tuy y Valles Del Tuy 💸</h2>
-                   <a href="https://frosweb.github.io/ventasvallesdeltuy/otros/" target="_blank" rel="noopener noreferrer">
-                <h3>Variedades en Artículos 💸</h3>
-            </a>
-            <nav class="main-nav">
-                <ul class="nav-menu">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#venta">Venta</a></li>
-                    <li><a href="#alquiler">Alquiler</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-            <input type="text" id="searchInput" placeholder="Buscar publicaciones...">
-            <a href="https://www.facebook.com/groups/1159228138826054" target="_blank" rel="noopener noreferrer" class="facebook-button">
-                Sígueme en Facebook
-            </a>
-        </div>
-        
-        <div class="dot-container">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-</header>
-  <div class="property-grid" id="inicio">
-      <div class="property-card post" data-category="venta" id="venta">
-            <img src="img/img-26.jpg" alt="Casa a una cuadra de la Plaza Miranda" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/marketplace/item/868000895911023#" target="_blank" rel="noopener noreferrer">
-                    <h4>Zona Central de Ocumare del Tuy</h4>
-                </a>
-                <p class="property-price">$42.000</p>
-            </div>
-        </div>
-       <div class="property-card post" data-category="venta" id="venta">
-            <img src="img/img-26.jpg" alt="Apartamento en Jardines de Santa Rosa Cua" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/commerce/listing/1542548610447913/?media_id=0&ref=share_attachment#" target="_blank" rel="noopener noreferrer">
-                    <h4>Jardines de Santa Rosa, Cua</h4>
-                </a>
-                <p class="property-price">$16.000</p>
-            </div>
-        </div>
-      
-       <div class="property-card post" data-category="venta" id="venta">
-            <img src="img/img-24.jpg" alt="Urbanizacion Las Brisas, Cua" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/marketplace/item/665578989925165?rid=3116102361904356&ad_id&rt=1&refID=0&refType=0&referral_code=commerce_attachment#" target="_blank" rel="noopener noreferrer">
-                    <h4>Urbanización Las Brisas, Cua</h4>
-                </a>
-                <p class="property-price">$30.000</p>
-            </div>
-        </div>
-      <div class="property-card post" data-category="venta" id="venta">
-            <img src="img/img-24.jpg" alt="Vallecito II, Ocumare del Tuy" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/marketplace/item/1315151763599938?rid=3116105895237336&ad_id&rt=1&refID=0&refType=0&referral_code=commerce_attachment#" target="_blank" rel="noopener noreferrer">
-                    <h4>Sector Vallecito II, Ocumare del tuy</h4>
-                </a>
-                <p class="property-price">$5.000</p>
-            </div>
-        </div>
-         
-        <div class="property-card post" data-category="venta" id="venta">
-            <img src="img/img-14.jpg" alt="Sector el Calvario, Ocumare del Tuy" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/groups/1159228138826054/permalink/1277253423690191/?rdid=g0tY8Rw8x07L4SnA#" target="_blank" rel="noopener noreferrer">
-                    <h4>Sector El Calvario, Ocumare del Tuy</h4>
-                </a>
-                <p class="property-price">$13.000</p>
-            </div>
-        </div>
-        <div class="property-card post" data-category="venta">
-            <img src="img/img-13.jpg" alt="Urbanización Valle Alto 1, Ocumare del Tuy" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/groups/1159228138826054/permalink/1277253423690191/?rdid=g0tY8Rw8x07L4SnA#" target="_blank" rel="noopener noreferrer">
-                    <h4>Urbanización Valle Alto 1, Ocumare del Tuy</h4>
-                </a>
-                <p class="property-price">$11.000</p>
-            </div>
-        </div>
-        
-        <div class="property-card post" data-category="venta" id="venta">
-            <img src="img/img-1.jpg" alt="Urbanización Vista Real, Charallave" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/commerce/listing/1219299833550669/?ref=share_attachment" target="_blank" rel="noopener noreferrer">
-                    <h4>Urbanización Vista Real, Charallave</h4>
-                </a>
-                <p class="property-price">$22.000</p>
-            </div>
-        </div>
-        <div class="property-card post" data-category="venta">
-            <img src="img/img-2.jpg" alt="Town House Villa Falcon, Cua" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/marketplace/item/652444160783010?rid=3078129932368266&ad_id&rt=1&refID=0&refType=0&referral_code=commerce_attachment" target="_blank" rel="noopener noreferrer">
-                    <h4>Town House Villa Falcon, Cua</h4>
-                </a>
-                <p class="property-price">$32.000</p>
-            </div>
-        </div>
-        <div class="property-card post" data-category="venta">
-            <img src="img/img-3.jpg" alt="Urbanización Loma Real, Charallave" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/commerce/listing/1748014052503118/?ref=share_attachment" target="_blank" rel="noopener noreferrer">
-                    <h4>Urbanización Loma Real, Charallave</h4>
-                </a>
-                <p class="property-price">$32.000</p>
-            </div>
-        </div>
-        <div class="property-card post" data-category="venta">
-            <img src="img/img-19.jpg" alt="Carretera Nacional La Raiza, Santa Teresa" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/commerce/listing/1055739776471572/?ref=share_attachment" target="_blank" rel="noopener noreferrer">
-                    <h4>Carretera Nacional La Raiza, Santa Teresa del Tuy</h4>
-                </a>
-                <p class="property-price">$11.500</p>
-            </div>
-        </div>
-        <div class="property-card post" data-category="venta">
-            <img src="img/img-20.jpg" alt="Urbanizacion Mata Linda, Charallave" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/share/p/176ySRpuhV/" target="_blank" rel="noopener noreferrer">
-                    <h4>Urbanización Matalinda, Charallave</h4>
-                </a>
-                <p class="property-price">$35.000</p>
-            </div>
-        </div>
-        <div class="property-card post" data-category="venta">
-           <img src="img/img-15.jpg" alt="Centro Turistico, Colonia Tovar" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/commerce/listing/1306943687504291/?ref=share_attachment" target="_blank" rel="noopener noreferrer">
-                    <h4>Centro Turistico Colonia Tovar</h4>
-                </a>
-                <p class="property-price">$350.000</p>
-            </div>
-        </div>
-        <div class="property-card post" data-category="alquiler" id="alquiler">
-            <img src="img/img-8.jpg" alt="Residencia Charleville, Cua" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/commerce/listing/24320502317604601/?ref=share_attachment&locale=es_LA" target="_blank" rel="noopener noreferrer">
-                    <h4>Residencia Charleville, Cua</h4>
-                </a>
-                <p class="property-price">Alquiler</p>
-            </div>
-        </div>
-        <div class="property-card post" data-category="alquiler">
-          <img src="img/img-21.jpg" alt="Cosca Central, Charallave" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/share/p/1A2DzMMLuB/" target="_blank" rel="noopener noreferrer">
-                    <h4>Casco Central, Charallave</h4>
-                </a>
-                <p class="property-price">Alquiler</p>
-            </div>
-        </div>
-         <div class="property-card post" data-category="venta">
-            <img src="img/img-9.jpg" alt="Urbanización Valle Alto, Ocumare del tuy" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/marketplace/item/1413221016426898?rid=25271403902447298&ad_id&rt=1&refID=0&refType=0&referral_code=commerce_attachment" target="_blank" rel="noopener noreferrer">
-                    <h4>Urbanización Valle Alto, Ocumare del Tuy</h4>
-                </a>
-                <p class="property-price">$10.000</p>
-            </div>
-        </div>
-        <div class="property-card post" data-category="venta">
-            <img src="img/img-10.jpg" alt="Residencia Mibeli, Santa Teresa del Tuy" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/commerce/listing/610113392173208/?ref=share_attachment" target="_blank" rel="noopener noreferrer">
-                    <h4>Residencia Mibeli, Santa Teresa del Tuy</h4>
-                </a>
-                <p class="property-price">$10.000</p>
-            </div>
-        </div>
-        <div class="property-card post" data-category="venta">
-            <img src="img/img-11.jpg" alt="Urbanizacion Mata Linda, Charallave" loading="lazy">
-            <div class="property-info">
-                <a href="https://www.facebook.com/commerce/listing/1080185164311985/?ref=share_attachment" target="_blank" rel="noopener noreferrer">
-                    <h4>Urbanización Mata Linda, Charallave</h4>
-                </a>
-                <p class="property-price">$18.000</p>
-            </div>
-        </div>
-        <div class="property-card post" data-category="venta">
-            <img src="img/img-12.jpg" alt="Urbanización Las Brisas, Cua" loading="lazy">
-                <div class="property-info">
-                <a href="https://www.facebook.com/commerce/listing/1334728568176904/?ref=share_attachment" target="_blank" rel="noopener noreferrer">
-                    <h4>Urbanización Las Brisas, Cua</h4>
-                </a>
-                <p class="property-price">$35.000</p>
-            </div>
-        </div>
-    </div>
-    <section class="container" id="contact">
-        
-            <div class="contact-form">
-    <h2>¿Interesado en una propiedad? Contáctame</h2>
-    <form action="send_email.php" method="post" id="contacto">
-        <input type="text" name="name" placeholder="Tu Nombre Completo" required>
-        <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
-        <textarea name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
-        <button type="submit">Enviar Mensaje</button>
-    </form>
-</div>
+        <div class="slideshow-container">
+            <figure class="mySlides fade">
+                <img src="img/img.jpg" alt="Casa moderna en Ocumare del Tuy" loading="lazy">
+            </figure>
+            <figure class="mySlides fade">
+                <img src="img/img-15.jpg" alt="Fachada de propiedad en Valles del Tuy" loading="lazy">
+            </figure>
+            <figure class="mySlides fade">
+                <img src="img/img-1.jpg" alt="Apartamento con excelente vista" loading="lazy">
+            </figure>
+            <figure class="mySlides fade">
+                <img src="img/img-14.jpg" alt="Vivienda familiar en Sector El Calvario" loading="lazy">
+            </figure>
             
-    </section>
+            <div class="header-content">
+                <h1>Tu Nuevo Hogar Te Espera</h1>
+                <p class="subtitle-links">
+                    <a href="https://www.facebook.com/groups/1159228138826054" target="_blank" rel="noopener noreferrer" aria-label="Marketplace Ocumare del Tuy y Valles Del Tuy">
+                        Marketplace Ocumare del Tuy y Valles Del Tuy 💸
+                    </a>
+                    |
+                    <a href="https://frosweb.github.io/ventasvallesdeltuy/otros/" target="_blank" rel="noopener noreferrer" aria-label="Variedades en Artículos">
+                        Variedades en Artículos 🛍️
+                    </a>
+                </p>
+                
+                <nav class="main-nav" aria-label="Navegación principal">
+                    <ul class="nav-menu">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#venta">Venta</a></li>
+                        <li><a href="#alquiler">Alquiler</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="search-and-social">
+                    <input type="search" id="searchInput" placeholder="Buscar por zona, tipo de propiedad..." aria-label="Campo de búsqueda de publicaciones">
+                    <a href="https://www.facebook.com/groups/1159228138826054" target="_blank" rel="noopener noreferrer" class="facebook-button" aria-label="Sígueme en Facebook">
+                        <i class="fab fa-facebook-f"></i> Sígueme en Facebook
+                    </a>
+                </div>
+            </div>
+            
+            <div class="dot-container" role="tablist" aria-label="Navegación del carrusel">
+                <span class="dot" role="tab" aria-controls="slide1"></span>
+                <span class="dot" role="tab" aria-controls="slide2"></span>
+                <span class="dot" role="tab" aria-controls="slide3"></span>
+                <span class="dot" role="tab" aria-controls="slide4"></span>
+            </div>
+        </div>
+    </header>
+
+    <main id="inicio">
+        <h2 class="section-title">Propiedades Destacadas en Valles del Tuy</h2>
+        <section class="property-grid">
+            <article class="property-card" data-category="venta" data-location="ocumare">
+                <figure>
+                    <img src="img/img-26.jpg" alt="Casa a una cuadra de la Plaza Miranda en Ocumare del Tuy" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/marketplace/item/868000895911023#" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Zona Central de Ocumare del Tuy</h3>
+                        </a>
+                        <p class="property-price">$42.000</p>
+                    </figcaption>
+                </figure>
+            </article>
+            
+            <article class="property-card" data-category="alquiler" data-location="cua" id="alquiler">
+                <figure>
+                    <img src="img/img-8.jpg" alt="Residencia Charleville, Cua para alquiler" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/commerce/listing/24320502317604601/?ref=share_attachment&locale=es_LA" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Residencia Charleville, Cua</h3>
+                        </a>
+                        <p class="property-price price-rent">Alquiler</p>
+                    </figcaption>
+                </figure>
+            </article>
+            
+            <article class="property-card" data-category="venta" data-location="cua" id="venta">
+                <figure>
+                    <img src="img/img-26.jpg" alt="Apartamento en Jardines de Santa Rosa Cua" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/commerce/listing/1542548610447913/?media_id=0&ref=share_attachment#" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Jardines de Santa Rosa, Cua</h3>
+                        </a>
+                        <p class="property-price">$16.000</p>
+                    </figcaption>
+                </figure>
+            </article>
+            
+             <article class="property-card" data-category="venta" data-location="cua">
+                <figure>
+                    <img src="img/img-24.jpg" alt="Urbanizacion Las Brisas, Cua" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/marketplace/item/665578989925165?rid=3116102361904356&ad_id&rt=1&refID=0&refType=0&referral_code=commerce_attachment#" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Urbanización Las Brisas, Cua</h3>
+                        </a>
+                        <p class="property-price">$30.000</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="property-card" data-category="venta" data-location="ocumare">
+                <figure>
+                    <img src="img/img-24.jpg" alt="Vallecito II, Ocumare del Tuy" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/marketplace/item/1315151763599938?rid=3116105895237336&ad_id&rt=1&refID=0&refType=0&referral_code=commerce_attachment#" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Sector Vallecito II, Ocumare del tuy</h3>
+                        </a>
+                        <p class="property-price">$5.000</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+             <article class="property-card" data-category="venta" data-location="ocumare">
+                <figure>
+                    <img src="img/img-14.jpg" alt="Sector el Calvario, Ocumare del Tuy" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/groups/1159228138826054/permalink/1277253423690191/?rdid=g0tY8Rw8x07L4SnA#" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Sector El Calvario, Ocumare del Tuy</h3>
+                        </a>
+                        <p class="property-price">$13.000</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="property-card" data-category="venta" data-location="ocumare">
+                <figure>
+                    <img src="img/img-13.jpg" alt="Urbanización Valle Alto 1, Ocumare del Tuy" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/groups/1159228138826054/permalink/1277253423690191/?rdid=g0tY8Rw8x07L4SnA#" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Urbanización Valle Alto 1, Ocumare del Tuy</h3>
+                        </a>
+                        <p class="property-price">$11.000</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="property-card" data-category="venta" data-location="charallave">
+                <figure>
+                    <img src="img/img-1.jpg" alt="Urbanización Vista Real, Charallave" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/commerce/listing/1219299833550669/?ref=share_attachment" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Urbanización Vista Real, Charallave</h3>
+                        </a>
+                        <p class="property-price">$22.000</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="property-card" data-category="venta" data-location="cua">
+                <figure>
+                    <img src="img/img-2.jpg" alt="Town House Villa Falcon, Cua" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/marketplace/item/652444160783010?rid=3078129932368266&ad_id&rt=1&refID=0&refType=0&referral_code=commerce_attachment" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Town House Villa Falcon, Cua</h3>
+                        </a>
+                        <p class="property-price">$32.000</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="property-card" data-category="venta" data-location="charallave">
+                <figure>
+                    <img src="img/img-3.jpg" alt="Urbanización Loma Real, Charallave" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/commerce/listing/1748014052503118/?ref=share_attachment" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Urbanización Loma Real, Charallave</h3>
+                        </a>
+                        <p class="property-price">$32.000</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+             <article class="property-card" data-category="venta" data-location="santa-teresa">
+                <figure>
+                    <img src="img/img-19.jpg" alt="Carretera Nacional La Raiza, Santa Teresa" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/commerce/listing/1055739776471572/?ref=share_attachment" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Carretera Nacional La Raiza, Santa Teresa del Tuy</h3>
+                        </a>
+                        <p class="property-price">$11.500</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="property-card" data-category="venta" data-location="charallave">
+                <figure>
+                    <img src="img/img-20.jpg" alt="Urbanizacion Mata Linda, Charallave" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/share/p/176ySRpuhV/" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Urbanización Matalinda, Charallave</h3>
+                        </a>
+                        <p class="property-price">$35.000</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+             <article class="property-card" data-category="venta" data-location="colonia-tovar">
+                <figure>
+                    <img src="img/img-15.jpg" alt="Centro Turistico, Colonia Tovar" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/commerce/listing/1306943687504291/?ref=share_attachment" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Centro Turistico Colonia Tovar</h3>
+                        </a>
+                        <p class="property-price">$350.000</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="property-card" data-category="alquiler" data-location="charallave">
+                <figure>
+                    <img src="img/img-21.jpg" alt="Cosca Central, Charallave" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/share/p/1A2DzMMLuB/" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Casco Central, Charallave</h3>
+                        </a>
+                        <p class="property-price price-rent">Alquiler</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="property-card" data-category="venta" data-location="ocumare">
+                <figure>
+                    <img src="img/img-9.jpg" alt="Urbanización Valle Alto, Ocumare del tuy" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/marketplace/item/1413221016426898?rid=25271403902447298&ad_id&rt=1&refID=0&refType=0&referral_code=commerce_attachment" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Urbanización Valle Alto, Ocumare del Tuy</h3>
+                        </a>
+                        <p class="property-price">$10.000</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="property-card" data-category="venta" data-location="santa-teresa">
+                <figure>
+                    <img src="img/img-10.jpg" alt="Residencia Mibeli, Santa Teresa del Tuy" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/commerce/listing/610113392173208/?ref=share_attachment" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Residencia Mibeli, Santa Teresa del Tuy</h3>
+                        </a>
+                        <p class="property-price">$10.000</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="property-card" data-category="venta" data-location="charallave">
+                <figure>
+                    <img src="img/img-11.jpg" alt="Urbanizacion Mata Linda, Charallave" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/commerce/listing/1080185164311985/?ref=share_attachment" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Urbanización Mata Linda, Charallave</h3>
+                        </a>
+                        <p class="property-price">$18.000</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="property-card" data-category="venta" data-location="cua">
+                <figure>
+                    <img src="img/img-12.jpg" alt="Urbanización Las Brisas, Cua" loading="lazy">
+                    <figcaption class="property-info">
+                        <a href="https://www.facebook.com/commerce/listing/1334728568176904/?ref=share_attachment" target="_blank" rel="noopener noreferrer">
+                            <h3 class="property-title">Urbanización Las Brisas, Cua</h3>
+                        </a>
+                        <p class="property-price">$35.000</p>
+                    </figcaption>
+                </figure>
+            </article>
+            
+        </section>
+        
+        <section class="contact-section" id="contacto">
+            <div class="contact-form">
+                <h2>¿Interesado en una propiedad? Contáctame 📲</h2>
+                <form action="send_email.php" method="post">
+                    <input type="text" name="name" placeholder="Tu Nombre Completo" required aria-label="Nombre completo">
+                    <input type="email" name="email" placeholder="Tu Correo Electrónico" required aria-label="Correo electrónico">
+                    <textarea name="message" rows="5" placeholder="Indica la propiedad de interés y tu consulta..." required aria-label="Tu Mensaje"></textarea>
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
-        <p>&copy; 2025 Buscador de publicaciones (Facebook) Marketplace Ocumare del Tuy y Valles Del Tuy 💸</p>
+        <p>&copy; 2025 Buscador de Inmuebles. Todos los derechos reservados.</p>
+        <p>Publicaciones enlazadas al Marketplace Ocumare del Tuy y Valles Del Tuy 💸</p>
     </footer>
-    <script src="script.js"></script>
-    <script src="slideshow.js"></script>
-    <a href="https://wa.me/584125448623" target="_blank" class="whatsapp-float">
+    
+    <a href="https://wa.me/584125448623" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+    
+    <script src="slideshow.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
-
 </html>
-
-
-

@@ -339,3 +339,301 @@ a:hover {
         transform: scale(1.1);
     }
 }
+
+/*==========================================================
+  ESTILOS GLOBALES Y VARIABLES
+==========================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    /* Paleta de colores mejorada */
+    --color-primary: #ff4500; /* Naranja-Rojo para destacar ofertas */
+    --color-secondary: #007bff; /* Azul para botones y enlaces */
+    --color-success: #28a745; /* Verde para precios/ofertas */
+    --color-background-light: #f4f6f8; /* Fondo muy claro */
+    --color-text-dark: #212529; /* Texto oscuro y legible */
+    --color-text-light: #fff;
+    --color-facebook-blue: #1877f2;
+    
+    /* Tipografía */
+    --font-family-sans: 'Poppins', sans-serif;
+    
+    /* Sombras y transiciones */
+    --box-shadow-medium: 0 6px 15px rgba(0, 0, 0, 0.1);
+    --box-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.2);
+    --transition-standard: 0.3s ease-in-out;
+}
+
+/*==========================================================
+  AJUSTES GENERALES (Rendimiento)
+==========================================================*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    line-height: 1.6;
+    background-color: var(--color-background-light);
+    color: var(--color-text-dark);
+    margin: 0;
+    padding: 0;
+    /* Optimización: Mejorar el renderizado en móviles */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    transition: color var(--transition-standard);
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--color-primary);
+    margin: 50px 0 30px;
+    font-weight: 700;
+}
+
+/* --- Transiciones para filtros y búsqueda (Visualización) --- */
+.property-card {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.property-card.is-hidden {
+    opacity: 0;
+    transform: scale(0.98);
+    /* Usar height: 0; y overflow: hidden; es mejor para el rendimiento que display: none */
+    height: 0; 
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+
+/*==========================================================
+  ENCABEZADO (HERO SECTION)
+==========================================================*/
+.hero-section {
+    /* Altura más adaptativa para mejorar la visualización en móviles */
+    height: clamp(60vh, 80vh, 100vh); 
+    /* ... (resto de estilos de hero-section) ... */
+}
+
+/* Imagen y Opacidad para Contraste */
+.mySlides img {
+    /* Mantiene los estilos de object-fit: cover, animation: zoom, etc. */
+    filter: brightness(55%); /* Un poco más oscuro para asegurar la legibilidad del texto blanco */
+    transition: filter 0.5s;
+}
+
+.header-content h1 {
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    /* ... (resto de estilos de h1) ... */
+}
+
+/* Botón de Facebook */
+.facebook-button {
+    background-color: var(--color-facebook-blue);
+    /* ... (resto de estilos del botón) ... */
+}
+
+/* Búsqueda */
+#searchInput {
+    /* ... (mantiene estilos) ... */
+    max-width: 700px; /* Un poco más de ancho */
+}
+
+/*==========================================================
+  GRID DE PROPIEDADES (Visualización)
+==========================================================*/
+.property-grid {
+    display: grid;
+    /* Grid más fluido y adaptable */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.property-card {
+    background-color: var(--color-text-light);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow-medium);
+    overflow: hidden;
+    transition: transform var(--transition-standard), box-shadow var(--transition-standard);
+}
+
+.property-card:hover {
+    transform: translateY(-5px); /* Menos desplazamiento para una sensación más sutil */
+    box-shadow: var(--box-shadow-hover);
+}
+
+.property-card img {
+    width: 100%;
+    height: 250px; /* Aumenta un poco la altura para mejor visualización */
+    object-fit: cover;
+    transition: transform 0.5s ease; /* Transición más rápida para mejor sensación de respuesta */
+}
+
+.property-price {
+    font-size: 1.5rem;
+    color: var(--color-text-dark); /* Color más neutro por defecto */
+    font-weight: 700;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.price-offer {
+    color: var(--color-success); /* Verde para ofertas atractivas */
+    font-size: 1.6rem;
+}
+.price-high {
+    color: var(--color-primary); /* Rojo/Naranja para artículos de alto valor */
+}
+
+/*==========================================================
+  FORMULARIO DE CONTACTO (Seguridad y Usabilidad)
+==========================================================*/
+.contact-section {
+    background-color: var(--color-text-light);
+    border-top: 5px solid var(--color-primary);
+    padding: 60px 20px;
+}
+
+.contact-form {
+    box-shadow: var(--box-shadow-medium);
+}
+
+.contact-hint {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.contact-form button {
+    background-color: var(--color-primary);
+}
+
+.contact-form button:hover {
+    background-color: #d13a00; /* Tono de hover para el nuevo primary */
+    transform: scale(1.02);
+}
+
+/*==========================================================
+  WHATSAPP FLOTANTE
+==========================================================*/
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: var(--color-text-light);
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 60px;
+    z-index: 1000;
+    box-shadow: var(--box-shadow-medium);
+    transition: transform var(--transition-standard);
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/*==========================================================
+  PIE DE PÁGINA
+==========================================================*/
+.footer {
+    /* ... (mantiene estilos) ... */
+}
+
+
+/*==========================================================
+  MEDIA QUERIES (RESPONSIVIDAD para baja calidad/móviles)
+==========================================================*/
+@media (max-width: 768px) {
+    .header-content {
+        padding: 15px;
+    }
+
+    .header-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-menu a {
+        padding: 8px 15px;
+        font-size: 1rem;
+    }
+
+    .property-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 20px;
+    }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        line-height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+/*==========================================================
+  NAVEGACIÓN Y BOTÓN DE FACEBOOK
+==========================================================*/
+/* ... (otros estilos de navegación) ... */
+
+.facebook-button {
+    display: inline-flex; /* Usa flex para alinear el ícono y el texto */
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre el ícono y el texto */
+    
+    background-color: var(--color-facebook-blue);
+    color: var(--color-text-light);
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-top: 30px;
+    
+    transition: background-color var(--transition-standard), transform var(--transition-standard);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.facebook-button i {
+    font-size: 1.2rem; /* Tamaño del ícono */
+}
+
+.facebook-button:hover {
+    /* Oscurece el color en hover */
+    background-color: #166fe5; 
+    transform: translateY(-3px); /* Efecto de elevación sutil */
+}

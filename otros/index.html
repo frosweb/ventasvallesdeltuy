@@ -17,8 +17,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style" fetchpriority="high">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8g1s9/P7+F/c8Jj0O9x56Pz1N5+Nf2s/4qj1I55QyK0P18r6v68pB5fP4pQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head> 
 <body>
@@ -26,28 +30,28 @@
         <div class="slideshow-container">
             
             <div class="mySlides fade">
-                <img src="img/img.jpg" alt="Vista general de Ocumare del Tuy y los Valles del Tuy" loading="lazy" decoding="async">
+                <img src="img/img.jpg" alt="Vista general de Ocumare del Tuy y los Valles del Tuy" loading="eager" decoding="async" fetchpriority="high">
             </div>
             <div class="header-content">
-    <h2>Variedades en Artículos</h2> 
-    <a href="https://frosweb.github.io/ventasvallesdeltuy/" rel="noopener noreferrer" class="group-link" aria-label="Marketplace Inmuebles Valles del Tuy">
-        <h2>Marketplace Ocumare del Tuy y Valles Del Tuy 🏘️</h2>
-    </a>
-    
-    <nav class="main-nav" aria-label="Navegación Principal">
-        <ul class="nav-menu">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#venta">Venta</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
-    
-    <input type="search" id="searchInput" placeholder="Buscar por artículo, marca o zona..." aria-label="Campo de búsqueda de artículos">
-    
-    <a href="https://www.facebook.com/groups/1159228138826054" target="_blank" rel="nofollow noopener noreferrer" class="facebook-button">
-        <i class="fab fa-facebook-f"></i> Síguenos en Facebook
-    </a>
-    </div>
+                <h2>Variedades en Artículos</h2> 
+                <a href="https://frosweb.github.io/ventasvallesdeltuy/" rel="noopener noreferrer" class="group-link" aria-label="Marketplace Inmuebles Valles del Tuy">
+                    <h2>Marketplace Ocumare del Tuy y Valles Del Tuy 🏘️</h2>
+                </a>
+                
+                <nav class="main-nav" aria-label="Navegación Principal">
+                    <ul class="nav-menu">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#venta-ofertas">Venta</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                
+                <input type="search" id="searchInput" placeholder="Buscar por artículo, marca o zona..." aria-label="Campo de búsqueda de artículos">
+                
+                <a href="https://www.facebook.com/groups/1159228138826054" target="_blank" rel="nofollow noopener noreferrer" class="facebook-button">
+                    <i class="fab fa-facebook-f"></i> Síguenos en Facebook
+                </a>
+            </div>
                         
             <div class="dot-container" role="tablist">
                 <span class="dot" role="tab"></span>
@@ -57,10 +61,10 @@
     </header>
 
     <main class="container" id="inicio">
-        <h2 class="section-title">Nuestras Últimas Ofertas de Marketplace</h2>
+        <h2 class="section-title" id="venta-ofertas">Nuestras Últimas Ofertas de Marketplace</h2>
         <section class="property-grid">
             
-<article class="property-card post" data-category="ropa" data-location="vargas" id="venta">
+            <article class="property-card post" data-category="ropa" data-location="vargas">
                 <figure>
                     <img src="img/img-14.jpg" alt="Blusas manga larga de encaje" loading="lazy" decoding="async">
                     <figcaption class="property-info">
@@ -72,7 +76,7 @@
                 </figure>
             </article>
             
- <article class="property-card post" data-category="tecnología" data-location="caracas" id="venta">
+            <article class="property-card post" data-category="tecnología" data-location="caracas">
                 <figure>
                     <img src="img/img-13.jpg" alt="Forro oterbox" loading="lazy" decoding="async">
                     <figcaption class="property-info">
@@ -84,8 +88,7 @@
                 </figure>
             </article>
             
-            
-              <article class="property-card post" data-category="ropa" data-location="caracas" id="venta">
+            <article class="property-card post" data-category="ropa" data-location="caracas">
                 <figure>
                     <img src="img/img-12.jpg" alt="Sueteres Milan" loading="lazy" decoding="async">
                     <figcaption class="property-info">
@@ -97,7 +100,7 @@
                 </figure>
             </article>
             
-             <article class="property-card post" data-category="perfume" data-location="caracas" id="venta">
+            <article class="property-card post" data-category="perfume" data-location="caracas">
                 <figure>
                     <img src="img/img-11.jpg" alt="Wild Country 100ml de Avon" loading="lazy" decoding="async">
                     <figcaption class="property-info">
@@ -109,7 +112,7 @@
                 </figure>
             </article>
             
-            <article class="property-card post" data-category="perfume" data-location="caracas" id="venta">
+            <article class="property-card post" data-category="perfume" data-location="caracas">
                 <figure>
                     <img src="img/img-10.jpg" alt="Splash Cyzone" loading="lazy" decoding="async">
                     <figcaption class="property-info">
@@ -121,7 +124,7 @@
                 </figure>
             </article>
             
-              <article class="property-card post" data-category="traje de baño data-location="vargas" id="venta">
+            <article class="property-card post" data-category="traje de baño" data-location="vargas">
                 <figure>
                     <img src="img/img-9.jpg" alt="Vestido de capucha playero" loading="lazy" decoding="async">
                     <figcaption class="property-info">
@@ -133,7 +136,7 @@
                 </figure>
             </article>
             
-            <article class="property-card post" data-category="ropa" data-location="vargas" id="venta">
+            <article class="property-card post" data-category="ropa" data-location="vargas">
                 <figure>
                     <img src="img/img-8.jpg" alt="Maya sola de piedreria" loading="lazy" decoding="async">
                     <figcaption class="property-info">
@@ -146,7 +149,7 @@
             </article>
 
             
-            <article class="property-card post" data-category="tecnología" data-location="ocumare" id="venta">
+            <article class="property-card post" data-category="tecnología" data-location="ocumare">
                 <figure>
                     <img src="img/img-7.jpg" alt="Sistema de agua filtrada y recarga de botellones en Ocumare" loading="lazy" decoding="async">
                     <figcaption class="property-info">
@@ -194,7 +197,7 @@
                 </figure>
             </article>
             
-            <article class="property-card post" data-category="ropa" data-location="caracas">
+            <article class="property-card post" data-category="Ropa" data-location="caracas">
                 <figure>
                     <img src="img/img-1.jpg" alt="Franelas de caballero en DTF, variedad de colores, Caracas" loading="lazy" decoding="async">
                     <figcaption class="property-info">
@@ -232,13 +235,13 @@
             
         </section>
 
-        <section class="contact-section">
+        <section class="contact-section" id="contacto">
             <div class="contact-form">
                 <h2 id="formulario-contacto">¿Interesado? Contáctame de forma Segura 🔒</h2>
                 <p class="contact-hint">Rellena el formulario y te contactaremos. Recuerda nunca compartir contraseñas o datos sensibles.</p>
                 <form action="send_email.php" method="post">
                     <input type="text" name="name" placeholder="Tu Nombre Completo" required aria-label="Nombre completo">
-                    <input type="email" name="email" placeholder="omarbandes@gmail.com" required aria-label="omarbandes@gmail.com">
+                    <input type="email" name="email" placeholder="omarbandes@gmail.com" required aria-label="Correo electrónico para contacto">
                     <textarea name="message" rows="5" placeholder="Indica el artículo de interés y tu consulta..." required aria-label="Tu Mensaje"></textarea>
                     <button type="submit">Enviar Mensaje</button>
                 </form>
@@ -258,6 +261,3 @@
     </a>
 </body>
 </html>
-
-
-

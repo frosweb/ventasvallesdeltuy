@@ -1,88 +1,101 @@
+// ==========================================================
+// Lógica del Carrusel (Slideshow)
+// ==========================================================
 let slideIndex = 0;
-showSlides();
+// Se llama al inicio para empezar el carrusel
+showSlides(); 
 
 function showSlides() {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
   
-  // Ocultar todas las diapositivas
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   
-  // Quitar la clase 'active' de todos los puntos
+  // Uso de classList es más moderno que modificar className directamente
   for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+    dots[i].classList.remove("active"); 
   }
   
-  // Incrementar el índice y reiniciarlo si se excede el número de diapositivas
   slideIndex++;
   if (slideIndex > slides.length) {
     slideIndex = 1;
   }
   
-  // Mostrar la diapositiva actual y activar el punto correspondiente
   slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
+  dots[slideIndex - 1].classList.add("active");
   
-  // Llamar a la función cada 5 segundos
+  // Llama a la función cada 5 segundos
   setTimeout(showSlides, 5000);
 }
 
 
-
+// ==========================================================
+// Lógica de Búsqueda y Navegación (Optimizado con Debouncing)
+// ==========================================================
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
-    const posts = document.querySelectorAll('.post');
+    const posts = document.querySelectorAll('.property-card.post');
+    let searchTimeout = null; // Variable para el Debouncing
 
-    searchInput.addEventListener('keyup', function() {
-        const searchTerm = this.value.toLowerCase(); // Término de búsqueda en minúsculas
+    // 1. FUNCIÓN DE FILTRADO
+    function filterPosts(searchTerm) {
+        const term = searchTerm.toLowerCase().trim();
 
         posts.forEach(post => {
-            // Se busca en el título, el contenido y las etiquetas
-            const postText = post.textContent.toLowerCase();
+            // Se busca en el título, alt de imagen, categorías y localización
+            const postTitle = post.querySelector('h3') ? post.querySelector('h3').textContent.toLowerCase() : '';
             const postImageAlt = post.querySelector('img').alt.toLowerCase();
+            const postCategory = post.getAttribute('data-category').toLowerCase();
+            const postLocation = post.getAttribute('data-location').toLowerCase();
 
-            if (postText.includes(searchTerm) || postImageAlt.includes(searchTerm)) {
-                post.style.display = 'flex'; // Muestra la publicación si hay coincidencia
+            // Lógica de coincidencia
+            const isMatch = postTitle.includes(term) || 
+                            postImageAlt.includes(term) ||
+                            postCategory.includes(term) ||
+                            postLocation.includes(term);
+
+            // Aplicar las clases optimizadas del CSS para animación
+            if (isMatch) {
+                post.classList.remove('is-hidden'); 
             } else {
-                post.style.display = 'none'; // Oculta la publicación
+                post.classList.add('is-hidden'); 
             }
         });
-    });
-});
-document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    const posts = document.querySelectorAll('.property-card');
+    }
 
+
+    // 2. DEBOUNCING IMPLEMENTADO (CRUCIAL PARA EL RENDIMIENTO)
+    searchInput.addEventListener('keyup', function() {
+        // Limpia el temporizador anterior
+        clearTimeout(searchTimeout); 
+
+        // Establece un nuevo temporizador
+        searchTimeout = setTimeout(() => {
+            // Llama a la función de filtrado SOLO después de 300ms de inactividad
+            filterPosts(this.value);
+        }, 300); 
+    });
+
+
+    // 3. NAVEGACIÓN (Scroll a secciones) - ARREGLADO
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            // Prevent the default anchor jump
             e.preventDefault(); 
             
-            // Get the category from the link's href
-            const category = link.getAttribute('href').substring(1); 
+            // Obtiene el ID del destino (inicio, ofertas, formulario-contacto)
+            const targetId = link.getAttribute('href').substring(1); 
             
-            // If the category is "inicio", show all posts
-            if (category === 'inicio') {
-                posts.forEach(post => {
-                    post.style.display = 'block';
-                });
-            } else {
-                // Otherwise, show only the posts that match the category
-                posts.forEach(post => {
-                    const postCategory = post.getAttribute('data-category');
-                    if (postCategory === category) {
-                        post.style.display = 'block';
-                    } else {
-                        post.style.display = 'none';
-                    }
-                });
-            }
+            // Scroll a la sección correcta
+            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
 
-            // Scroll to the top of the property grid
-            document.getElementById('inicio').scrollIntoView({ behavior: 'smooth' });
+            // Opcional: limpiar la búsqueda al navegar por el menú
+            searchInput.value = '';
+            filterPosts(''); // Muestra todos los artículos al limpiar
         });
     });
 });

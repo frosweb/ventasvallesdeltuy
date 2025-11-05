@@ -16,19 +16,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Configura la dirección de correo a la que se enviará el mensaje
-    $recipient = "tucorreo@ejemplo.com"; // 👈 Sustituye esto con tu dirección de correo
+    // =========================================================================
+    // ⚠️ PASO CRÍTICO: CONFIGURA TU CORREO ELECTRÓNICO AQUÍ
+    // =========================================================================
+    $recipient = "omarbandes@gmail.com"; // 👈 SUSTITUYE ESTO POR TU DIRECCIÓN REAL
+    // =========================================================================
 
     // Asunto del correo
-    $subject = "Nuevo mensaje desde el sitio web de inmuebles - {$name}";
+    $subject = "Nuevo mensaje desde Marketplace Valles del Tuy - {$name}";
 
     // Construye el contenido del correo
     $email_content = "Nombre: {$name}\n";
     $email_content .= "Correo: {$email}\n\n";
     $email_content .= "Mensaje:\n{$message}\n";
 
-    // Configura las cabeceras del correo
-    $email_headers = "From: {$name} <{$email}>";
+    // Configura las cabeceras del correo. Esto ayuda a que el correo no vaya a SPAM.
+    $email_headers = "From: {$name} <{$email}>" . "\r\n" .
+                     "Reply-To: {$email}" . "\r\n" .
+                     "X-Mailer: PHP/" . phpversion();
 
     // Envía el correo
     if (mail($recipient, $subject, $email_content, $email_headers)) {
@@ -38,11 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Establece un código de respuesta HTTP 500 (Internal Server Error)
         http_response_code(500);
-        echo "Algo salió mal. No pudimos enviar tu mensaje.";
+        echo "¡Ups! Algo salió mal y no pudimos enviar tu mensaje.";
     }
 
 } else {
-    // Si la solicitud no es POST, no permitas el acceso directo
+    // Si no es un método POST, rechaza el acceso
     http_response_code(403);
     echo "Hubo un problema con tu envío, por favor inténtalo de nuevo.";
 }

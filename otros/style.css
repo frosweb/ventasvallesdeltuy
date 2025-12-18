@@ -573,61 +573,33 @@ a:hover {
 }
 
 .price-high {
-
     color: var(--color-primary); /* Naranja/Rojo para destacar artículos */
-
 }
-
-
 
 /*==========================================================
-
   FORMULARIO DE CONTACTO
-
 ==========================================================*/
-
 .contact-section {
-
     background-color: var(--color-text-light);
-
     border-top: 5px solid var(--color-primary);
-
     padding: 60px 20px;
-
 }
-
-
 
 .contact-form {
-
     background-color: var(--color-text-light);
-
     padding: 40px;
-
     border-radius: 12px;
-
     box-shadow: var(--box-shadow-medium);
-
     margin: 0 auto;
-
     max-width: 800px;
-
 }
 
-
-
 .contact-hint {
-
     text-align: center;
-
     color: #6c757d;
-
     margin-bottom: 20px;
-
     font-style: italic;
-
     font-size: 0.9rem;
-
 }
 
 
@@ -643,211 +615,109 @@ a:hover {
 
 
 .contact-form input:focus,
-
 .contact-form textarea:focus {
-
     outline: none;
-
     border-color: var(--color-primary);
-
     box-shadow: 0 0 0 3px rgba(255, 69, 0, 0.1);
-
 }
-
-
-
-
 
 .contact-form button {
 
     background-color: var(--color-primary);
-
     color: var(--color-text-light);
-
     border: none;
-
     padding: 16px;
-
     cursor: pointer;
-
     border-radius: 8px;
-
     font-size: 1.1rem;
-
     font-weight: 600;
-
     transition: background-color var(--transition-standard), transform var(--transition-standard);
 
 }
 
-
-
 .contact-form button:hover {
-
     background-color: #d13a00; /* Tono de hover para el nuevo primary */
-
     transform: scale(1.02);
 
 }
 
-
-
 /*==========================================================
-
   WHATSAPP FLOTANTE
-
 ==========================================================*/
-
 .whatsapp-float {
-
     position: fixed;
-
     width: 60px;
-
     height: 60px;
-
     bottom: 30px;
-
     right: 30px;
-
     background-color: #25d366;
-
     color: var(--color-text-light);
-
     border-radius: 50%;
-
     text-align: center;
-
     font-size: 30px;
-
     line-height: 60px;
-
     z-index: 1000;
-
     box-shadow: var(--box-shadow-medium);
-
     transition: transform var(--transition-standard);
-
 }
-
-
 
 .whatsapp-float:hover {
-
     transform: scale(1.1);
-
 }
 
-
-
 /*==========================================================
-
   PIE DE PÁGINA
-
 ==========================================================*/
 
 .footer {
-
     text-align: center;
-
     padding: 25px;
-
     background-color: var(--color-text-dark);
-
     color: var(--color-text-light);
-
     margin-top: 40px;
 
 }
 
-
-
 @keyframes zoom {
 
     0%, 100% {
-
-        transform: scale(1);
-
+      transform: scale(1);
     }
-
     50% {
-
         transform: scale(1.1);
-
     }
-
 }
 
-
-
 /*==========================================================
-
   MEDIA QUERIES (RESPONSIVIDAD)
-
 ==========================================================*/
 
 @media (max-width: 768px) {
-
     .header-content {
-
         padding: 15px;
-
     }
-
-
-
     .header-content h1 {
-
         font-size: 2.2rem;
-
     }
-
-
-
     .nav-menu {
-
         /* Se mantiene flex-wrap para evitar que rompa el layout */
-
         gap: 10px;
-
     }
-
-
-
     .nav-menu a {
-
         padding: 8px 15px;
-
         font-size: 1rem;
-
-    }
-
-
-
+  }
     .property-grid {
-
         grid-template-columns: 1fr; /* Una columna en móvil */
-
         gap: 20px;
-
     }
-
-    
-
-    .whatsapp-float {
-
+   
+   .whatsapp-float {
         width: 50px;
-
         height: 50px;
-
         font-size: 25px;
-
         line-height: 50px;
-
         bottom: 20px;
-
         right: 20px;
-
     }
-
-} 
+}

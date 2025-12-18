@@ -1,101 +1,126 @@
-// ==========================================================
-// Lógica del Carrusel (Slideshow)
-// ==========================================================
-let slideIndex = 0;
-// Se llama al inicio para empezar el carrusel
-showSlides(); 
+/**
+ * Marketplace Valles del Tuy - Lógica de Usuario
+ * Optimizado para rendimiento y limpieza de memoria
+ */
 
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  
-  // Uso de classList es más moderno que modificar className directamente
-  for (i = 0; i < dots.length; i++) {
-    dots[i].classList.remove("active"); 
-  }
-  
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
-  
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].classList.add("active");
-  
-  // Llama a la función cada 5 segundos
-  setTimeout(showSlides, 5000);
-}
+// Usamos una estructura de módulo para no contaminar el espacio global
+const MarketplaceApp = {
+    slideIndex: 0,
+    searchTimeout: null,
 
+    init() {
+        // Inicializar componentes
+        this.initSlideshow();
+        this.initSearch();
+        this.initSmoothScroll();
+        this.initCategoryFilters();
+    },
 
-// ==========================================================
-// Lógica de Búsqueda y Navegación (Optimizado con Debouncing)
-// ==========================================================
-document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('searchInput');
-    const posts = document.querySelectorAll('.property-card.post');
-    let searchTimeout = null; // Variable para el Debouncing
+    // 1. LÓGICA DEL CARRUSEL (Mejorada para evitar errores)
+    initSlideshow() {
+        const slides = document.getElementsByClassName("mySlides");
+        const dots = document.getElementsByClassName("dot");
 
-    // 1. FUNCIÓN DE FILTRADO
-    function filterPosts(searchTerm) {
-        const term = searchTerm.toLowerCase().trim();
+        if (slides.length === 0) return; // Si no hay slides, no hacer nada
+
+        // Ocultar todos
+        Array.from(slides).forEach(slide => slide.style.display = "none");
+        Array.from(dots).forEach(dot => dot.classList.remove("active"));
+
+        this.slideIndex++;
+        if (this.slideIndex > slides.length) this.slideIndex = 1;
+
+        slides[this.slideIndex - 1].style.display = "block";
+        if (dots[this.slideIndex - 1]) {
+            dots[this.slideIndex - 1].classList.add("active");
+        }
+
+        // Usamos flecha para mantener el contexto de 'this'
+        setTimeout(() => this.initSlideshow(), 5000);
+    },
+
+    // 2. LÓGICA DE BÚSQUEDA (Con Debouncing y Normalización)
+    initSearch() {
+        const searchInput = document.getElementById('searchInput');
+        if (!searchInput) return;
+
+        searchInput.addEventListener('input', (e) => {
+            clearTimeout(this.searchTimeout);
+            this.searchTimeout = setTimeout(() => {
+                this.performFilter(e.target.value.toLowerCase().trim());
+            }, 300);
+        });
+    },
+
+    // 3. FILTRADO CENTRALIZADO (Para búsqueda y botones)
+    performFilter(term, category = 'all') {
+        const posts = document.querySelectorAll('.property-card.post');
+        
+        // Normalización de texto para ignorar acentos (Opcional pero recomendado)
+        const normalize = (str) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const normalizedTerm = normalize(term);
 
         posts.forEach(post => {
-            // Se busca en el título, alt de imagen, categorías y localización
-            const postTitle = post.querySelector('h3') ? post.querySelector('h3').textContent.toLowerCase() : '';
-            const postImageAlt = post.querySelector('img').alt.toLowerCase();
-            const postCategory = post.getAttribute('data-category').toLowerCase();
-            const postLocation = post.getAttribute('data-location').toLowerCase();
+            const title = normalize(post.querySelector('h3')?.textContent.toLowerCase() || '');
+            const cat = post.getAttribute('data-category')?.toLowerCase() || '';
+            const loc = normalize(post.getAttribute('data-location')?.toLowerCase() || '');
+            const alt = normalize(post.querySelector('img')?.alt.toLowerCase() || '');
 
-            // Lógica de coincidencia
-            const isMatch = postTitle.includes(term) || 
-                            postImageAlt.includes(term) ||
-                            postCategory.includes(term) ||
-                            postLocation.includes(term);
+            const matchesSearch = title.includes(normalizedTerm) || 
+                                 loc.includes(normalizedTerm) || 
+                                 alt.includes(normalizedTerm) ||
+                                 cat.includes(normalizedTerm);
+            
+            const matchesCategory = (category === 'all' || cat === category);
 
-            // Aplicar las clases optimizadas del CSS para animación
-            if (isMatch) {
-                post.classList.remove('is-hidden'); 
+            // Animación suave mediante clases CSS
+            if (matchesSearch && matchesCategory) {
+                post.classList.remove('is-hidden');
+                post.style.display = "block"; // Asegura visibilidad para el grid
             } else {
-                post.classList.add('is-hidden'); 
+                post.classList.add('is-hidden');
+                // Retrasamos el display none para que se vea la transición de opacidad
+                setTimeout(() => {
+                    if (post.classList.contains('is-hidden')) post.style.display = "none";
+                }, 400);
             }
         });
-    }
+    },
 
+    // 4. FILTROS POR BOTONES (NUEVO: Mejora la UX)
+    initCategoryFilters() {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // UI: Cambiar botón activo
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
 
-    // 2. DEBOUNCING IMPLEMENTADO (CRUCIAL PARA EL RENDIMIENTO)
-    searchInput.addEventListener('keyup', function() {
-        // Limpia el temporizador anterior
-        clearTimeout(searchTimeout); 
-
-        // Establece un nuevo temporizador
-        searchTimeout = setTimeout(() => {
-            // Llama a la función de filtrado SOLO después de 300ms de inactividad
-            filterPosts(this.value);
-        }, 300); 
-    });
-
-
-    // 3. NAVEGACIÓN (Scroll a secciones) - ARREGLADO
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault(); 
-            
-            // Obtiene el ID del destino (inicio, ofertas, formulario-contacto)
-            const targetId = link.getAttribute('href').substring(1); 
-            
-            // Scroll a la sección correcta
-            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-
-            // Opcional: limpiar la búsqueda al navegar por el menú
-            searchInput.value = '';
-            filterPosts(''); // Muestra todos los artículos al limpiar
+                const category = btn.getAttribute('data-filter');
+                this.performFilter('', category);
+            });
         });
-    });
-});
+    },
+
+    // 5. NAVEGACIÓN SUAVE (Mejorada)
+    initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === "#") return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    }
+};
+
+// Iniciar aplicación cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => MarketplaceApp.init());
